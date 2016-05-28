@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC192E9B1CFA169D00CF7315 /* air.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC192E9A1CFA169D00CF7315 /* air.jpg */; };
+		FC192E9D1CFA1AF100CF7315 /* autumn.png in Resources */ = {isa = PBXBuildFile; fileRef = FC192E9C1CFA1AF100CF7315 /* autumn.png */; };
 		FCA180E81CF99B6A0087E9F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA180E71CF99B6A0087E9F1 /* AppDelegate.swift */; };
 		FCA180EA1CF99B6A0087E9F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA180E91CF99B6A0087E9F1 /* ViewController.swift */; };
 		FCA180EF1CF99B6A0087E9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA180EE1CF99B6A0087E9F1 /* Assets.xcassets */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC192E9A1CFA169D00CF7315 /* air.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = air.jpg; sourceTree = "<group>"; };
+		FC192E9C1CFA1AF100CF7315 /* autumn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autumn.png; sourceTree = "<group>"; };
 		FCA180E41CF99B6A0087E9F1 /* Chirp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA180E71CF99B6A0087E9F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA180E91CF99B6A0087E9F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +172,8 @@
 		FCA1813A1CFA0B440087E9F1 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				FC192E9A1CFA169D00CF7315 /* air.jpg */,
+				FC192E9C1CFA1AF100CF7315 /* autumn.png */,
 				FCA1813B1CFA0B5E0087E9F1 /* bars.png */,
 			);
 			name = Image;
@@ -279,9 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA1812A1CF9D5130087E9F1 /* Main.storyboard in Resources */,
+				FC192E9D1CFA1AF100CF7315 /* autumn.png in Resources */,
 				FCA181321CF9DB160087E9F1 /* Localizable.strings in Resources */,
 				FCA180EF1CF99B6A0087E9F1 /* Assets.xcassets in Resources */,
 				FCA1813C1CFA0B5E0087E9F1 /* bars.png in Resources */,
+				FC192E9B1CFA169D00CF7315 /* air.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
