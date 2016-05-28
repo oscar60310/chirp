@@ -13,9 +13,11 @@
 		FCA180FD1CF99B6A0087E9F1 /* ChirpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA180FC1CF99B6A0087E9F1 /* ChirpTests.swift */; };
 		FCA181081CF99B6A0087E9F1 /* ChirpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181071CF99B6A0087E9F1 /* ChirpUITests.swift */; };
 		FCA181191CF9AD510087E9F1 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181181CF9AD510087E9F1 /* SlideMenuController.swift */; };
-		FCA181201CF9D07D0087E9F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCA181221CF9D07D0087E9F1 /* Localizable.strings */; };
-		FCA181261CF9D25A0087E9F1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181251CF9D25A0087E9F1 /* MainViewController.swift */; };
+		FCA181261CF9D25A0087E9F1 /* CreateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181251CF9D25A0087E9F1 /* CreateViewController.swift */; };
 		FCA1812A1CF9D5130087E9F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA181291CF9D5130087E9F1 /* Main.storyboard */; };
+		FCA181321CF9DB160087E9F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCA181341CF9DB160087E9F1 /* Localizable.strings */; };
+		FCA181371CF9E0090087E9F1 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181361CF9E0090087E9F1 /* Localize.swift */; };
+		FCA181391CF9E65A0087E9F1 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181381CF9E65A0087E9F1 /* SlideViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +50,12 @@
 		FCA181071CF99B6A0087E9F1 /* ChirpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChirpUITests.swift; sourceTree = "<group>"; };
 		FCA181091CF99B6A0087E9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA181181CF9AD510087E9F1 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
-		FCA181211CF9D07D0087E9F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		FCA181251CF9D25A0087E9F1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FCA181251CF9D25A0087E9F1 /* CreateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateViewController.swift; sourceTree = "<group>"; };
 		FCA181291CF9D5130087E9F1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
+		FCA181331CF9DB160087E9F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FCA181351CF9DB170087E9F1 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		FCA181361CF9E0090087E9F1 /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
+		FCA181381CF9E65A0087E9F1 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +138,7 @@
 		FCA181151CF9A5280087E9F1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				FCA181361CF9E0090087E9F1 /* Localize.swift */,
 				FCA181181CF9AD510087E9F1 /* SlideMenuController.swift */,
 			);
 			name = "Support Files";
@@ -141,7 +147,7 @@
 		FCA1811D1CF9D0060087E9F1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
-				FCA181221CF9D07D0087E9F1 /* Localizable.strings */,
+				FCA181341CF9DB160087E9F1 /* Localizable.strings */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -150,7 +156,8 @@
 			isa = PBXGroup;
 			children = (
 				FCA180E91CF99B6A0087E9F1 /* ViewController.swift */,
-				FCA181251CF9D25A0087E9F1 /* MainViewController.swift */,
+				FCA181251CF9D25A0087E9F1 /* CreateViewController.swift */,
+				FCA181381CF9E65A0087E9F1 /* SlideViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -223,6 +230,7 @@
 				TargetAttributes = {
 					FCA180E31CF99B6A0087E9F1 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = KVU655BPT6;
 					};
 					FCA180F71CF99B6A0087E9F1 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -240,6 +248,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hant",
 			);
 			mainGroup = FCA180DB1CF99B6A0087E9F1;
 			productRefGroup = FCA180E51CF99B6A0087E9F1 /* Products */;
@@ -259,7 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA1812A1CF9D5130087E9F1 /* Main.storyboard in Resources */,
-				FCA181201CF9D07D0087E9F1 /* Localizable.strings in Resources */,
+				FCA181321CF9DB160087E9F1 /* Localizable.strings in Resources */,
 				FCA180EF1CF99B6A0087E9F1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,8 +296,10 @@
 			files = (
 				FCA180EA1CF99B6A0087E9F1 /* ViewController.swift in Sources */,
 				FCA181191CF9AD510087E9F1 /* SlideMenuController.swift in Sources */,
+				FCA181391CF9E65A0087E9F1 /* SlideViewController.swift in Sources */,
+				FCA181371CF9E0090087E9F1 /* Localize.swift in Sources */,
 				FCA180E81CF99B6A0087E9F1 /* AppDelegate.swift in Sources */,
-				FCA181261CF9D25A0087E9F1 /* MainViewController.swift in Sources */,
+				FCA181261CF9D25A0087E9F1 /* CreateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,10 +335,11 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FCA181221CF9D07D0087E9F1 /* Localizable.strings */ = {
+		FCA181341CF9DB160087E9F1 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FCA181211CF9D07D0087E9F1 /* en */,
+				FCA181331CF9DB160087E9F1 /* en */,
+				FCA181351CF9DB170087E9F1 /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -372,7 +384,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -411,7 +423,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -422,10 +434,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Chirp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NsysuDop.Chirp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -433,10 +449,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Chirp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.NsysuDop.Chirp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -15,7 +15,7 @@ class ViewController: SlideMenuController{
     override func awakeFromNib() {
        
 // load Main
-        if let mainController = self.storyboard?.instantiateViewControllerWithIdentifier("main")
+        if let mainController = self.storyboard?.instantiateViewControllerWithIdentifier("create")
         {
             self.mainViewController = mainController
         }
@@ -29,6 +29,7 @@ class ViewController: SlideMenuController{
         {
             self.rightViewController = rightController
         }*/
+        
         debugPrint("awake Main slide menu")
         super.awakeFromNib()
     }

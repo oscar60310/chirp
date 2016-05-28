@@ -4,6 +4,6 @@
 
   Created by Chen Ping Tsai on 2016/5/28.
   Copyright © 2016年 NsysuDopp. All rights reserved.
-  Chinese
 */
-"test" = "測試“;
+"test msg" = "測試訊息";
+"create event" = "建立活動";
