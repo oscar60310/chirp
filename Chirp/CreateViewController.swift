@@ -3,13 +3,9 @@ import UIKit
 class CreateViewController : UIViewController{
     
     
-  
-    
+
    
-  
-   
-   
-    @IBOutlet weak var NavBar: UINavigationBar!
+        @IBOutlet weak var NavBar: UINavigationBar!
      // 上方標題
     
     
@@ -31,6 +27,12 @@ class CreateViewController : UIViewController{
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    // 開啟側邊選單
+    
+    @IBAction func openleft(sender: AnyObject) {
+        self.slideMenuController()?.openLeft()
+    }
+
     
     
     
