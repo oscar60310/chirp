@@ -1,18 +1,13 @@
 import UIKit
 
-class MainViewController : ViewController{
+class MainViewController : UIViewController{
     
     
-    @IBOutlet weak var sss: UILabel!
-    // 這裡複寫awakeFromeNib
-    override func awakeFromNib() {
-        
-        sss.text = "test"
-    }
-    
+    @IBOutlet weak var test: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        test.text = "123"
     }
     
     override func didReceiveMemoryWarning() {
