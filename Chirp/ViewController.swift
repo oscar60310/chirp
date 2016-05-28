@@ -8,7 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: SlideMenuController{
+    
+    
+// 這裡複寫awakeFromeNib
+    override func awakeFromNib() {
+       
+// load Main
+        if let mainController = self.storyboard?.instantiateViewControllerWithIdentifier("main")
+        {
+            self.mainViewController = mainController
+        }
+        // load left silde
+        if let leftController = self.storyboard?.instantiateViewControllerWithIdentifier("left")
+        {
+            self.leftViewController = leftController
+        }
+        //load right silde
+        /*if let rightController = self.storyboard?.instantiateViewControllerWithIdentifier("right")
+        {
+            self.rightViewController = rightController
+        }*/
+        debugPrint("awake Main slide menu")
+        super.awakeFromNib()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +42,8 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
 
 }
 

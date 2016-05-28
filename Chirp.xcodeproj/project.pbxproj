@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		FCA180E81CF99B6A0087E9F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA180E71CF99B6A0087E9F1 /* AppDelegate.swift */; };
 		FCA180EA1CF99B6A0087E9F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA180E91CF99B6A0087E9F1 /* ViewController.swift */; };
-		FCA180ED1CF99B6A0087E9F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA180EB1CF99B6A0087E9F1 /* Main.storyboard */; };
 		FCA180EF1CF99B6A0087E9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA180EE1CF99B6A0087E9F1 /* Assets.xcassets */; };
-		FCA180F21CF99B6A0087E9F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA180F01CF99B6A0087E9F1 /* LaunchScreen.storyboard */; };
 		FCA180FD1CF99B6A0087E9F1 /* ChirpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA180FC1CF99B6A0087E9F1 /* ChirpTests.swift */; };
 		FCA181081CF99B6A0087E9F1 /* ChirpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181071CF99B6A0087E9F1 /* ChirpUITests.swift */; };
+		FCA181191CF9AD510087E9F1 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181181CF9AD510087E9F1 /* SlideMenuController.swift */; };
+		FCA181201CF9D07D0087E9F1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FCA181221CF9D07D0087E9F1 /* Localizable.strings */; };
+		FCA181261CF9D25A0087E9F1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181251CF9D25A0087E9F1 /* MainViewController.swift */; };
+		FCA1812A1CF9D5130087E9F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA181291CF9D5130087E9F1 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,9 +39,7 @@
 		FCA180E41CF99B6A0087E9F1 /* Chirp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA180E71CF99B6A0087E9F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA180E91CF99B6A0087E9F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FCA180EC1CF99B6A0087E9F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FCA180EE1CF99B6A0087E9F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FCA180F11CF99B6A0087E9F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FCA180F31CF99B6A0087E9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA180F81CF99B6A0087E9F1 /* ChirpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChirpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA180FC1CF99B6A0087E9F1 /* ChirpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChirpTests.swift; sourceTree = "<group>"; };
@@ -47,6 +47,10 @@
 		FCA181031CF99B6A0087E9F1 /* ChirpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChirpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA181071CF99B6A0087E9F1 /* ChirpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChirpUITests.swift; sourceTree = "<group>"; };
 		FCA181091CF99B6A0087E9F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA181181CF9AD510087E9F1 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
+		FCA181211CF9D07D0087E9F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FCA181251CF9D25A0087E9F1 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FCA181291CF9D5130087E9F1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +101,12 @@
 		FCA180E61CF99B6A0087E9F1 /* Chirp */ = {
 			isa = PBXGroup;
 			children = (
+				FCA181241CF9D2280087E9F1 /* ViewController */,
+				FCA1811D1CF9D0060087E9F1 /* Resource */,
+				FCA181151CF9A5280087E9F1 /* Support Files */,
 				FCA180E71CF99B6A0087E9F1 /* AppDelegate.swift */,
-				FCA180E91CF99B6A0087E9F1 /* ViewController.swift */,
-				FCA180EB1CF99B6A0087E9F1 /* Main.storyboard */,
+				FCA181291CF9D5130087E9F1 /* Main.storyboard */,
 				FCA180EE1CF99B6A0087E9F1 /* Assets.xcassets */,
-				FCA180F01CF99B6A0087E9F1 /* LaunchScreen.storyboard */,
 				FCA180F31CF99B6A0087E9F1 /* Info.plist */,
 			);
 			path = Chirp;
@@ -123,6 +128,31 @@
 				FCA181091CF99B6A0087E9F1 /* Info.plist */,
 			);
 			path = ChirpUITests;
+			sourceTree = "<group>";
+		};
+		FCA181151CF9A5280087E9F1 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCA181181CF9AD510087E9F1 /* SlideMenuController.swift */,
+			);
+			name = "Support Files";
+			sourceTree = "<group>";
+		};
+		FCA1811D1CF9D0060087E9F1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				FCA181221CF9D07D0087E9F1 /* Localizable.strings */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		FCA181241CF9D2280087E9F1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FCA180E91CF99B6A0087E9F1 /* ViewController.swift */,
+				FCA181251CF9D25A0087E9F1 /* MainViewController.swift */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,7 +240,6 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
 			);
 			mainGroup = FCA180DB1CF99B6A0087E9F1;
 			productRefGroup = FCA180E51CF99B6A0087E9F1 /* Products */;
@@ -229,9 +258,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCA180F21CF99B6A0087E9F1 /* LaunchScreen.storyboard in Resources */,
+				FCA1812A1CF9D5130087E9F1 /* Main.storyboard in Resources */,
+				FCA181201CF9D07D0087E9F1 /* Localizable.strings in Resources */,
 				FCA180EF1CF99B6A0087E9F1 /* Assets.xcassets in Resources */,
-				FCA180ED1CF99B6A0087E9F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,7 +286,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA180EA1CF99B6A0087E9F1 /* ViewController.swift in Sources */,
+				FCA181191CF9AD510087E9F1 /* SlideMenuController.swift in Sources */,
 				FCA180E81CF99B6A0087E9F1 /* AppDelegate.swift in Sources */,
+				FCA181261CF9D25A0087E9F1 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,20 +324,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FCA180EB1CF99B6A0087E9F1 /* Main.storyboard */ = {
+		FCA181221CF9D07D0087E9F1 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				FCA180EC1CF99B6A0087E9F1 /* Base */,
+				FCA181211CF9D07D0087E9F1 /* en */,
 			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		FCA180F01CF99B6A0087E9F1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FCA180F11CF99B6A0087E9F1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -482,6 +505,7 @@
 				FCA1810E1CF99B6A0087E9F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCA1810F1CF99B6A0087E9F1 /* Build configuration list for PBXNativeTarget "ChirpTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +514,7 @@
 				FCA181111CF99B6A0087E9F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCA181121CF99B6A0087E9F1 /* Build configuration list for PBXNativeTarget "ChirpUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +523,7 @@
 				FCA181141CF99B6A0087E9F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
