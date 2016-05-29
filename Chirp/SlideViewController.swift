@@ -2,18 +2,14 @@ import UIKit
 
 class SlideViewController : UIViewController{
     
-    
-    
-    
-    @IBAction func aas(sender: AnyObject) {
-        
-    }
-    @IBOutlet weak var test: UILabel!
+
+    @IBOutlet weak var OptionTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+      
+      //  OptionTable.registerNib(SlideOptionTable, forCellReuseIdentifier: <#T##String#>)
     }
+   
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -30,4 +26,5 @@ class SlideViewController : UIViewController{
 
     }
     
+      
 }

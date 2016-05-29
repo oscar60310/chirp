@@ -21,6 +21,9 @@
 		FCA181371CF9E0090087E9F1 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181361CF9E0090087E9F1 /* Localize.swift */; };
 		FCA181391CF9E65A0087E9F1 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181381CF9E65A0087E9F1 /* SlideViewController.swift */; };
 		FCA1813C1CFA0B5E0087E9F1 /* bars.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA1813B1CFA0B5E0087E9F1 /* bars.png */; };
+		FCCA10D71CFB13A6004F42E1 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCA10D61CFB13A6004F42E1 /* add.png */; };
+		FCCA10DC1CFB1AB1004F42E1 /* SlideOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA10DB1CFB1AB1004F42E1 /* SlideOption.swift */; };
+		FCCA10E01CFB200F004F42E1 /* SlideOptionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA10DF1CFB200F004F42E1 /* SlideOptionTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		FCA181361CF9E0090087E9F1 /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		FCA181381CF9E65A0087E9F1 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		FCA1813B1CFA0B5E0087E9F1 /* bars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bars.png; sourceTree = "<group>"; };
+		FCCA10D61CFB13A6004F42E1 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		FCCA10DB1CFB1AB1004F42E1 /* SlideOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOption.swift; sourceTree = "<group>"; };
+		FCCA10DF1CFB200F004F42E1 /* SlideOptionTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideOptionTable.swift; path = ../SlideOptionTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 		FCA180E61CF99B6A0087E9F1 /* Chirp */ = {
 			isa = PBXGroup;
 			children = (
+				FCCA10DA1CFB1A9D004F42E1 /* Struct */,
 				FCA1813A1CFA0B440087E9F1 /* Image */,
 				FCA181241CF9D2280087E9F1 /* ViewController */,
 				FCA1811D1CF9D0060087E9F1 /* Resource */,
@@ -162,6 +169,7 @@
 		FCA181241CF9D2280087E9F1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FCCA10DF1CFB200F004F42E1 /* SlideOptionTable.swift */,
 				FCA180E91CF99B6A0087E9F1 /* ViewController.swift */,
 				FCA181251CF9D25A0087E9F1 /* CreateViewController.swift */,
 				FCA181381CF9E65A0087E9F1 /* SlideViewController.swift */,
@@ -172,11 +180,20 @@
 		FCA1813A1CFA0B440087E9F1 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				FCCA10D61CFB13A6004F42E1 /* add.png */,
 				FC192E9A1CFA169D00CF7315 /* air.jpg */,
 				FC192E9C1CFA1AF100CF7315 /* autumn.png */,
 				FCA1813B1CFA0B5E0087E9F1 /* bars.png */,
 			);
 			name = Image;
+			sourceTree = "<group>";
+		};
+		FCCA10DA1CFB1A9D004F42E1 /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				FCCA10DB1CFB1AB1004F42E1 /* SlideOption.swift */,
+			);
+			name = Struct;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCCA10D71CFB13A6004F42E1 /* add.png in Resources */,
 				FCA1812A1CF9D5130087E9F1 /* Main.storyboard in Resources */,
 				FC192E9D1CFA1AF100CF7315 /* autumn.png in Resources */,
 				FCA181321CF9DB160087E9F1 /* Localizable.strings in Resources */,
@@ -317,6 +335,8 @@
 				FCA180EA1CF99B6A0087E9F1 /* ViewController.swift in Sources */,
 				FCA181191CF9AD510087E9F1 /* SlideMenuController.swift in Sources */,
 				FCA181391CF9E65A0087E9F1 /* SlideViewController.swift in Sources */,
+				FCCA10E01CFB200F004F42E1 /* SlideOptionTable.swift in Sources */,
+				FCCA10DC1CFB1AB1004F42E1 /* SlideOption.swift in Sources */,
 				FCA181371CF9E0090087E9F1 /* Localize.swift in Sources */,
 				FCA180E81CF99B6A0087E9F1 /* AppDelegate.swift in Sources */,
 				FCA181261CF9D25A0087E9F1 /* CreateViewController.swift in Sources */,
