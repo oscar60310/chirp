@@ -50,7 +50,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="EKH-XN-BJd" firstAttribute="centerY" secondItem="f0q-Ot-0rg" secondAttribute="centerY" id="2gg-gw-VVs"/>
                             <constraint firstItem="EKH-XN-BJd" firstAttribute="leading" secondItem="f0q-Ot-0rg" secondAttribute="leading" id="3GP-lY-wcH"/>

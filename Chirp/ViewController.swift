@@ -53,8 +53,9 @@ class ViewController: SlideMenuController{
     override func viewDidAppear(animated: Bool) {
         // 檢查註冊狀態
         super.viewDidAppear(animated)
-        let logined = false
-        if(!logined)
+        let cfg = Config()
+
+        if(cfg.main_config_read() == nil)
         {
             debugPrint("to login page")
             let loginStorg: UIStoryboard = UIStoryboard(name: "Login",bundle: nil)

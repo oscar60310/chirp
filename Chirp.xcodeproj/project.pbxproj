@@ -15,6 +15,9 @@
 		FC7BE85D1CFC61D600034F5C /* login_back2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC7BE85C1CFC61D600034F5C /* login_back2.jpg */; };
 		FC7E880F1CFC6DB0005DB2FE /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7E880D1CFC6DB0005DB2FE /* FBSDKCoreKit.framework */; };
 		FC7E88101CFC6DB0005DB2FE /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC7E880E1CFC6DB0005DB2FE /* FBSDKLoginKit.framework */; };
+		FC7E88151CFC8AF9005DB2FE /* ErrorHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E88141CFC8AF9005DB2FE /* ErrorHandle.swift */; };
+		FC7E88171CFC8FE1005DB2FE /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E88161CFC8FE1005DB2FE /* Config.swift */; };
+		FC7E88191CFC9397005DB2FE /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7E88181CFC9397005DB2FE /* SwiftyJSON.swift */; };
 		FCA180E81CF99B6A0087E9F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA180E71CF99B6A0087E9F1 /* AppDelegate.swift */; };
 		FCA180EA1CF99B6A0087E9F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA180E91CF99B6A0087E9F1 /* ViewController.swift */; };
 		FCA180EF1CF99B6A0087E9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA180EE1CF99B6A0087E9F1 /* Assets.xcassets */; };
@@ -62,6 +65,9 @@
 		FC7E880D1CFC6DB0005DB2FE /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		FC7E880E1CFC6DB0005DB2FE /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		FC7E88111CFC6EF9005DB2FE /* Chirp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chirp-Bridging-Header.h"; sourceTree = "<group>"; };
+		FC7E88141CFC8AF9005DB2FE /* ErrorHandle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandle.swift; sourceTree = "<group>"; };
+		FC7E88161CFC8FE1005DB2FE /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		FC7E88181CFC9397005DB2FE /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		FCA180E41CF99B6A0087E9F1 /* Chirp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA180E71CF99B6A0087E9F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA180E91CF99B6A0087E9F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -194,6 +200,7 @@
 		FCA1811D1CF9D0060087E9F1 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				FC7E88181CFC9397005DB2FE /* SwiftyJSON.swift */,
 				FCA181341CF9DB160087E9F1 /* Localizable.strings */,
 			);
 			name = Resource;
@@ -231,6 +238,8 @@
 			isa = PBXGroup;
 			children = (
 				FCCA10DB1CFB1AB1004F42E1 /* SlideOption.swift */,
+				FC7E88141CFC8AF9005DB2FE /* ErrorHandle.swift */,
+				FC7E88161CFC8FE1005DB2FE /* Config.swift */,
 			);
 			name = Struct;
 			sourceTree = "<group>";
@@ -380,11 +389,14 @@
 				FC7BE8591CFC527600034F5C /* WelcomeViewController.swift in Sources */,
 				FCA180EA1CF99B6A0087E9F1 /* ViewController.swift in Sources */,
 				FCA181191CF9AD510087E9F1 /* SlideMenuController.swift in Sources */,
+				FC7E88191CFC9397005DB2FE /* SwiftyJSON.swift in Sources */,
 				FCA181391CF9E65A0087E9F1 /* SlideViewController.swift in Sources */,
+				FC7E88171CFC8FE1005DB2FE /* Config.swift in Sources */,
 				FCCA10E01CFB200F004F42E1 /* SlideOptionTable.swift in Sources */,
 				FCCA10DC1CFB1AB1004F42E1 /* SlideOption.swift in Sources */,
 				FCA181371CF9E0090087E9F1 /* Localize.swift in Sources */,
 				FCA180E81CF99B6A0087E9F1 /* AppDelegate.swift in Sources */,
+				FC7E88151CFC8AF9005DB2FE /* ErrorHandle.swift in Sources */,
 				FCA181261CF9D25A0087E9F1 /* CreateViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

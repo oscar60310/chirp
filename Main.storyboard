@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="swF-dx-tqi">
             <objects>
-                <viewController id="YkY-XF-zby" customClass="ViewController" customModule="Chirp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainPage" id="YkY-XF-zby" customClass="ViewController" customModule="Chirp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KPN-xu-GJT"/>
                         <viewControllerLayoutGuide type="bottom" id="8Sy-KH-IW8"/>
@@ -115,22 +115,6 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您好，用戶名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4T-hb-MfM">
-                                <rect key="frame" x="30" y="121" width="126" height="26"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="5fU-t7-iB9"/>
-                                    <constraint firstAttribute="width" constant="161" id="Cwh-vQ-Zek"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="5fU-t7-iB9"/>
-                                        <exclude reference="Cwh-vQ-Zek"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NiC-0v-M4Y">
                                 <rect key="frame" x="0.0" y="158" width="300" height="442"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -151,7 +135,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7WJ-hP-bWB">
                                                     <rect key="frame" x="71" y="12" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -187,6 +171,22 @@
                                     <outlet property="delegate" destination="ERM-wc-dkF" id="2v0-Bv-aae"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="您好，用戶名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R4T-hb-MfM">
+                                <rect key="frame" x="30" y="124" width="126" height="26"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="5fU-t7-iB9"/>
+                                    <constraint firstAttribute="width" constant="161" id="Cwh-vQ-Zek"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5fU-t7-iB9"/>
+                                        <exclude reference="Cwh-vQ-Zek"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -234,6 +234,7 @@
                     </view>
                     <connections>
                         <outlet property="OptionTable" destination="NiC-0v-M4Y" id="Pga-xK-BCN"/>
+                        <outlet property="hellow" destination="R4T-hb-MfM" id="THv-r6-0Uq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="crc-Z4-Thk" userLabel="First Responder" sceneMemberID="firstResponder"/>
