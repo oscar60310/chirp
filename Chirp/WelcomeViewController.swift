@@ -9,6 +9,13 @@
 import UIKit
 class WelcomeViewController: UIViewController
 {
+    //FB SDK
+    let loginbtn : FBSDKLoginButton = {
+        let button = FBSDKLoginButton()
+        button.readPermissions = ["email"]
+        return button
+    }()
+    
     @IBOutlet weak var APP_Name: UILabel!
     @IBOutlet weak var slogan: UILabel!
     override func viewDidLoad() {
@@ -16,7 +23,8 @@ class WelcomeViewController: UIViewController
         
         APP_Name.text = "Chirp".localized()
         slogan.text = "Login page slogan".localized()
-        
+        view.addSubview(loginbtn)
+        loginbtn.center = view.center
         
         
     }
