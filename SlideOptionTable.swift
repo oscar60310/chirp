@@ -8,33 +8,11 @@
 
 import UIKit
 
-class SlideOptionTable: UITableViewController  {
+class SlideOptionTable: UITableViewCell  {
     
+    @IBOutlet weak var name_label: UILabel!
     
-    var s_option = [SlideOption]()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.s_option = [SlideOption(name: "12s3"),SlideOption(name: "12s4"),SlideOption(name: "12s5")]
-        
-        
-        
-    }
-
-    
-    //回傳選單數量
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.s_option.count
-    }
-     
-     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        print(indexPath.row)
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-     
-        var option : SlideOption
-        option = s_option[indexPath.row]
-        //cell.textLabel?.text = option.name
-        return cell
-     }
-
+    @IBOutlet weak var icon: UIImageView!
+   
+   
 }

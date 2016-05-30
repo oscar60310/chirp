@@ -1,16 +1,22 @@
 import UIKit
 
-class SlideViewController : UIViewController{
+class SlideViewController : UIViewController,UITableViewDelegate,UITableViewDataSource{
     
 
     @IBOutlet weak var OptionTable: UITableView!
+    var s_option = [SlideOption]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-      //  OptionTable.registerNib(SlideOptionTable, forCellReuseIdentifier: <#T##String#>)
+        
+        // 左方選單內容
+        self.s_option = [SlideOption(name: "create event".localized() , icon:"add.png"),SlideOption(name: "event list".localized() , icon:"note.png"),SlideOption(name: "chat room".localized() , icon:"chat.png"),SlideOption(name: "high light event".localized() , icon:"badge.png")]
+        
+
     }
    
     
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -26,5 +32,23 @@ class SlideViewController : UIViewController{
 
     }
     
+    // Return Options count
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.s_option.count
+    }
+    
+    // return cell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    
+        let cell = self.OptionTable.dequeueReusableCellWithIdentifier("Cell_option") as! SlideOptionTable?
+        
+        
+        var option : SlideOption
+        option = s_option[indexPath.row]
+        
+        cell!.name_label.text = option.name
+        cell!.icon.image = UIImage(named: option.icon)
+        return cell!
+    }
       
 }

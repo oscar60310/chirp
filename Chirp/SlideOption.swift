@@ -10,4 +10,5 @@ import Foundation
 struct SlideOption
 {
     let name : String
+    let icon : String
 }

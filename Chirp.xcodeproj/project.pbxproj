@@ -21,9 +21,12 @@
 		FCA181371CF9E0090087E9F1 /* Localize.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181361CF9E0090087E9F1 /* Localize.swift */; };
 		FCA181391CF9E65A0087E9F1 /* SlideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA181381CF9E65A0087E9F1 /* SlideViewController.swift */; };
 		FCA1813C1CFA0B5E0087E9F1 /* bars.png in Resources */ = {isa = PBXBuildFile; fileRef = FCA1813B1CFA0B5E0087E9F1 /* bars.png */; };
-		FCCA10D71CFB13A6004F42E1 /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = FCCA10D61CFB13A6004F42E1 /* add.png */; };
 		FCCA10DC1CFB1AB1004F42E1 /* SlideOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA10DB1CFB1AB1004F42E1 /* SlideOption.swift */; };
 		FCCA10E01CFB200F004F42E1 /* SlideOptionTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCCA10DF1CFB200F004F42E1 /* SlideOptionTable.swift */; };
+		FCE764D21CFC103F002F362D /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE764D11CFC103F002F362D /* add.png */; };
+		FCE764D41CFC1154002F362D /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE764D31CFC1154002F362D /* note.png */; };
+		FCE764D61CFC11A2002F362D /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE764D51CFC11A2002F362D /* chat.png */; };
+		FCE764DA1CFC133C002F362D /* badge.png in Resources */ = {isa = PBXBuildFile; fileRef = FCE764D91CFC133C002F362D /* badge.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,9 +68,12 @@
 		FCA181361CF9E0090087E9F1 /* Localize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localize.swift; sourceTree = "<group>"; };
 		FCA181381CF9E65A0087E9F1 /* SlideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideViewController.swift; sourceTree = "<group>"; };
 		FCA1813B1CFA0B5E0087E9F1 /* bars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bars.png; sourceTree = "<group>"; };
-		FCCA10D61CFB13A6004F42E1 /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		FCCA10DB1CFB1AB1004F42E1 /* SlideOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOption.swift; sourceTree = "<group>"; };
 		FCCA10DF1CFB200F004F42E1 /* SlideOptionTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideOptionTable.swift; path = ../SlideOptionTable.swift; sourceTree = "<group>"; };
+		FCE764D11CFC103F002F362D /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
+		FCE764D31CFC1154002F362D /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
+		FCE764D51CFC11A2002F362D /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
+		FCE764D91CFC133C002F362D /* badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,8 +186,11 @@
 		FCA1813A1CFA0B440087E9F1 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				FCCA10D61CFB13A6004F42E1 /* add.png */,
+				FCE764D51CFC11A2002F362D /* chat.png */,
+				FCE764D11CFC103F002F362D /* add.png */,
+				FCE764D91CFC133C002F362D /* badge.png */,
 				FC192E9A1CFA169D00CF7315 /* air.jpg */,
+				FCE764D31CFC1154002F362D /* note.png */,
 				FC192E9C1CFA1AF100CF7315 /* autumn.png */,
 				FCA1813B1CFA0B5E0087E9F1 /* bars.png */,
 			);
@@ -301,11 +310,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCCA10D71CFB13A6004F42E1 /* add.png in Resources */,
+				FCE764D41CFC1154002F362D /* note.png in Resources */,
+				FCE764D61CFC11A2002F362D /* chat.png in Resources */,
 				FCA1812A1CF9D5130087E9F1 /* Main.storyboard in Resources */,
+				FCE764D21CFC103F002F362D /* add.png in Resources */,
 				FC192E9D1CFA1AF100CF7315 /* autumn.png in Resources */,
 				FCA181321CF9DB160087E9F1 /* Localizable.strings in Resources */,
 				FCA180EF1CF99B6A0087E9F1 /* Assets.xcassets in Resources */,
+				FCE764DA1CFC133C002F362D /* badge.png in Resources */,
 				FCA1813C1CFA0B5E0087E9F1 /* bars.png in Resources */,
 				FC192E9B1CFA169D00CF7315 /* air.jpg in Resources */,
 			);
