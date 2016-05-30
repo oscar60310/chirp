@@ -13,7 +13,8 @@ class ViewController: SlideMenuController{
     
 // 這裡複寫awakeFromeNib
     override func awakeFromNib() {
-       
+        
+
 // load Main
         if let mainController = self.storyboard?.instantiateViewControllerWithIdentifier("create")
         {
@@ -32,10 +33,15 @@ class ViewController: SlideMenuController{
         
         debugPrint("awake Main slide menu")
         super.awakeFromNib()
+        
+        
+        
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -44,7 +50,19 @@ class ViewController: SlideMenuController{
         // Dispose of any resources that can be recreated.
     }
     
-    
+    override func viewDidAppear(animated: Bool) {
+        // 檢查註冊狀態
+        super.viewDidAppear(animated)
+        let logined = false
+        if(!logined)
+        {
+            debugPrint("to login page")
+            let loginStorg: UIStoryboard = UIStoryboard(name: "Login",bundle: nil)
+            let vc = loginStorg.instantiateViewControllerWithIdentifier("WelcomePage") as! WelcomeViewController
+            self.presentViewController(vc, animated: true, completion: nil)
+        }
+
+    }
 
 }
 

@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		FC192E9B1CFA169D00CF7315 /* air.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC192E9A1CFA169D00CF7315 /* air.jpg */; };
 		FC192E9D1CFA1AF100CF7315 /* autumn.png in Resources */ = {isa = PBXBuildFile; fileRef = FC192E9C1CFA1AF100CF7315 /* autumn.png */; };
+		FC7BE8541CFC4D1300034F5C /* icon80.png in Resources */ = {isa = PBXBuildFile; fileRef = FC7BE8531CFC4D1300034F5C /* icon80.png */; };
+		FC7BE8571CFC510B00034F5C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC7BE8561CFC510B00034F5C /* Login.storyboard */; };
+		FC7BE8591CFC527600034F5C /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7BE8581CFC527600034F5C /* WelcomeViewController.swift */; };
+		FC7BE85D1CFC61D600034F5C /* login_back2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC7BE85C1CFC61D600034F5C /* login_back2.jpg */; };
 		FCA180E81CF99B6A0087E9F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA180E71CF99B6A0087E9F1 /* AppDelegate.swift */; };
 		FCA180EA1CF99B6A0087E9F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA180E91CF99B6A0087E9F1 /* ViewController.swift */; };
 		FCA180EF1CF99B6A0087E9F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA180EE1CF99B6A0087E9F1 /* Assets.xcassets */; };
@@ -49,6 +53,10 @@
 /* Begin PBXFileReference section */
 		FC192E9A1CFA169D00CF7315 /* air.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = air.jpg; sourceTree = "<group>"; };
 		FC192E9C1CFA1AF100CF7315 /* autumn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autumn.png; sourceTree = "<group>"; };
+		FC7BE8531CFC4D1300034F5C /* icon80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon80.png; sourceTree = "<group>"; };
+		FC7BE8561CFC510B00034F5C /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		FC7BE8581CFC527600034F5C /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		FC7BE85C1CFC61D600034F5C /* login_back2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login_back2.jpg; sourceTree = "<group>"; };
 		FCA180E41CF99B6A0087E9F1 /* Chirp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chirp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA180E71CF99B6A0087E9F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCA180E91CF99B6A0087E9F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FC7BE8551CFC50EC00034F5C /* Story */ = {
+			isa = PBXGroup;
+			children = (
+				FCA181291CF9D5130087E9F1 /* Main.storyboard */,
+				FC7BE8561CFC510B00034F5C /* Login.storyboard */,
+			);
+			name = Story;
+			sourceTree = "<group>";
+		};
 		FCA180DB1CF99B6A0087E9F1 = {
 			isa = PBXGroup;
 			children = (
@@ -124,13 +141,13 @@
 		FCA180E61CF99B6A0087E9F1 /* Chirp */ = {
 			isa = PBXGroup;
 			children = (
+				FC7BE8551CFC50EC00034F5C /* Story */,
 				FCCA10DA1CFB1A9D004F42E1 /* Struct */,
 				FCA1813A1CFA0B440087E9F1 /* Image */,
 				FCA181241CF9D2280087E9F1 /* ViewController */,
 				FCA1811D1CF9D0060087E9F1 /* Resource */,
 				FCA181151CF9A5280087E9F1 /* Support Files */,
 				FCA180E71CF99B6A0087E9F1 /* AppDelegate.swift */,
-				FCA181291CF9D5130087E9F1 /* Main.storyboard */,
 				FCA180EE1CF99B6A0087E9F1 /* Assets.xcassets */,
 				FCA180F31CF99B6A0087E9F1 /* Info.plist */,
 			);
@@ -179,6 +196,7 @@
 				FCA180E91CF99B6A0087E9F1 /* ViewController.swift */,
 				FCA181251CF9D25A0087E9F1 /* CreateViewController.swift */,
 				FCA181381CF9E65A0087E9F1 /* SlideViewController.swift */,
+				FC7BE8581CFC527600034F5C /* WelcomeViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -187,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				FCE764D51CFC11A2002F362D /* chat.png */,
+				FC7BE8531CFC4D1300034F5C /* icon80.png */,
+				FC7BE85C1CFC61D600034F5C /* login_back2.jpg */,
 				FCE764D11CFC103F002F362D /* add.png */,
 				FCE764D91CFC133C002F362D /* badge.png */,
 				FC192E9A1CFA169D00CF7315 /* air.jpg */,
@@ -310,6 +330,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7BE85D1CFC61D600034F5C /* login_back2.jpg in Resources */,
+				FC7BE8541CFC4D1300034F5C /* icon80.png in Resources */,
 				FCE764D41CFC1154002F362D /* note.png in Resources */,
 				FCE764D61CFC11A2002F362D /* chat.png in Resources */,
 				FCA1812A1CF9D5130087E9F1 /* Main.storyboard in Resources */,
@@ -317,6 +339,7 @@
 				FC192E9D1CFA1AF100CF7315 /* autumn.png in Resources */,
 				FCA181321CF9DB160087E9F1 /* Localizable.strings in Resources */,
 				FCA180EF1CF99B6A0087E9F1 /* Assets.xcassets in Resources */,
+				FC7BE8571CFC510B00034F5C /* Login.storyboard in Resources */,
 				FCE764DA1CFC133C002F362D /* badge.png in Resources */,
 				FCA1813C1CFA0B5E0087E9F1 /* bars.png in Resources */,
 				FC192E9B1CFA169D00CF7315 /* air.jpg in Resources */,
@@ -344,6 +367,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7BE8591CFC527600034F5C /* WelcomeViewController.swift in Sources */,
 				FCA180EA1CF99B6A0087E9F1 /* ViewController.swift in Sources */,
 				FCA181191CF9AD510087E9F1 /* SlideMenuController.swift in Sources */,
 				FCA181391CF9E65A0087E9F1 /* SlideViewController.swift in Sources */,
