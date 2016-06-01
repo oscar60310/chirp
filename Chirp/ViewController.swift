@@ -53,7 +53,7 @@ class ViewController: SlideMenuController{
     override func viewDidAppear(animated: Bool) {
         // 檢查註冊狀態
         super.viewDidAppear(animated)
-        let cfg = Config()
+        let cfg = Config(views: self)
 
         if(cfg.main_config_read() == nil)
         {

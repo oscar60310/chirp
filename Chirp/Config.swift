@@ -10,9 +10,9 @@ import Foundation
 class Config
 {
     var eh: ErrorHandle!
-    init()
+    init(views: UIViewController)
     {
-        eh = ErrorHandle(class_name: "Config")
+        eh = ErrorHandle(class_name: "Config",view: views)
         let path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         let url = NSURL(fileURLWithPath: path)
         let filePath = url.URLByAppendingPathComponent("config").path!

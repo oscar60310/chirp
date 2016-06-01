@@ -14,3 +14,10 @@
 "Chirp" = "啁啾";
 "Logout" = "登出";
 "hellow" = "您好";
+"Hi " = "嗨 ";
+"nice to see you" = "很高興認識你！";
+"we need email confirm" = "為了確保服務品質，您必須認證學校的電子郵件信箱";
+"email not allow" = "糟糕，我們無法驗證這個電子郵件，請更換另一個地址或稍後再試一次";
+"email fail" = "電子郵件無法驗證";
+"email ok" = "驗證電子郵件";
+"email sended" = "我們剛剛寄了一封電子郵件給您，裡面包含一組認證碼，趕快去收信囉";

@@ -20,16 +20,24 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
     var config: Config!
     @IBOutlet weak var APP_Name: UILabel!
     @IBOutlet weak var slogan: UILabel!
+    @IBOutlet weak var email_label1: UILabel!
+    @IBOutlet weak var email_label2: UILabel!
+    @IBOutlet weak var display_view: UIView!
+    @IBOutlet weak var email_input: UITextField!
+    var token = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         
         APP_Name.text = "Chirp".localized()
         slogan.text = "Login page slogan".localized()
+        display_view.hidden = true
         
-        eh = ErrorHandle(class_name: "WelcomeViewController")
-        config = Config()
+        eh = ErrorHandle(class_name: "WelcomeViewController",view: self)
+        config = Config(views: self)
         view.addSubview(loginbtn)
-        loginbtn.center = view.center
+  
+        loginbtn.center = CGPointMake(view.bounds.size.width / 2 , view.bounds.size.height / 2 + loginbtn.bounds.size.height)
+        
         loginbtn.delegate = self
         loginbtn.setTitle("Logging via facebook", forState: UIControlState.Normal)
         
@@ -43,6 +51,10 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
     func getFBdata(token: String)
     {
         print("get facebook auth")
+        // Remove facebook button
+       
+        self.token = token
+        
         let parameters = ["fields": "email, first_name, last_name, picture.type(large), id"]
         FBSDKGraphRequest(graphPath: "me",parameters: parameters).startWithCompletionHandler{ (connection, result, error) -> Void in
             
@@ -53,11 +65,15 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
                 return
             }
             let js = JSON(result)
-            self.config.main_config_write(js.description)
-            print(self.config.main_config_read())
+            self.loginbtn.hidden = true
+            self.display_view.hidden = false
+            self.email_label1.text = "Hi ".localized() +  js["first_name"].string! + "，" + "nice to see you".localized()
+            self.email_label2.text = "we need email confirm".localized()
+            
+            /*
             let loginStorg: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
             let vc = loginStorg.instantiateViewControllerWithIdentifier("MainPage") as! ViewController
-            self.presentViewController(vc, animated: true, completion: nil)
+            self.presentViewController(vc, animated: true, completion: nil)*/
             
         }
         
@@ -68,11 +84,38 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         print("login")
         let token = FBSDKAccessToken.currentAccessToken()
-
+        if token == nil
+        {
+            return
+        }
         getFBdata(token.tokenString)
     }
     func loginButtonWillLogin(loginButton: FBSDKLoginButton!) -> Bool {
         return true
     }
-
+    var busy = false
+    @IBAction func email_send(sender: AnyObject) {
+        if self.busy
+        {
+            return
+        }
+        self.busy = true
+        let email: String = email_input.text!
+        let se = Server()
+        se.register_email_request(email, token: self.token){ (boolValue) -> () in
+             self.busy = false
+             if boolValue
+             {
+                self.eh.alert("email ok", text: "email sended")
+            }
+             else{
+                self.eh.alert("email fail", text: "email not allow")
+            }
+        }
+        
+       
+        
+    }
+   
+   
 }

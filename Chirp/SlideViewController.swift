@@ -20,7 +20,7 @@ class SlideViewController : UIViewController,UITableViewDelegate,UITableViewData
    
     
     override func viewDidAppear(animated: Bool) {
-        let config = Config()
+        let config = Config(views: self)
         let js = config.main_config_read() as JSON
      
         if js != nil
@@ -67,7 +67,7 @@ class SlideViewController : UIViewController,UITableViewDelegate,UITableViewData
             let refreshAlert = UIAlertController(title: "Logout", message: "All data will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
             
             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
-                let config = Config()
+                let config = Config(views: self)
                 config.main_config_write("")
                 self.slideMenuController()?.closeLeft()
             }))
