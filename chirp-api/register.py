@@ -25,7 +25,7 @@ class MainPage(webapp2.RequestHandler):
             from google.appengine.api import mail
             import random 
             code = ''.join(random.sample('ABCDEFGHIJKLMNOPQRSTUVWXYZ',5))
-            mail.send_mail(sender = "<啁啾> register@chirp-api.appspotmail.com",
+            mail.send_mail(sender = "啁啾 <register@chirp-api.appspotmail.com>",
                    to = "%s <%s>" % (html["name"],email),
                    subject = "歡迎註冊啁啾",
                    body = """嗨，%s :
