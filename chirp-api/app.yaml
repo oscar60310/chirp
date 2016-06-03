@@ -6,3 +6,5 @@ threadsafe: true
 handlers:
 - url: /register
   script: register.app
+- url: /EmailComfirm
+  script: EmailComfirm.app

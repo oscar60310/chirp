@@ -2,6 +2,7 @@
 import webapp2
 import json
 from google.appengine.api import urlfetch
+from google.appengine.ext import db
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
@@ -17,15 +18,17 @@ class MainPage(webapp2.RequestHandler):
         if not email.endswith("nsysu.edu.tw"):
           self.response.write(json.dumps({"Statu" : "403","Description" : "Email not allow"}))
         else:
+          out = db.GqlQuery('SELECT * FROM Member WHERE SchoolMail = :1',email)
+          if out.get() == None:
 
-          url = 'https://graph.facebook.com/v2.6/me?fields=id%2Cname%2Cemail%2Clast_name%2Cfirst_name&access_token='+token 
-          response = urlfetch.fetch(url)
-          if response.status_code == 200:
-            html = json.loads(response.content)
-            from google.appengine.api import mail
-            import random 
-            code = ''.join(random.sample('ABCDEFGHIJKLMNOPQRSTUVWXYZ',5))
-            mail.send_mail(sender = "啁啾 <register@chirp-api.appspotmail.com>",
+            url = 'https://graph.facebook.com/v2.6/me?fields=id%2Cname%2Cemail%2Clast_name%2Cfirst_name&access_token='+token 
+            response = urlfetch.fetch(url)
+            if response.status_code == 200:
+              html = json.loads(response.content)
+              from google.appengine.api import mail
+              import random 
+              code = ''.join(random.sample('ABCDEFGHIJKLMNOPQRSTUVWXYZ',5))
+              mail.send_mail(sender = "啁啾 <register@chirp-api.appspotmail.com>",
                    to = "%s <%s>" % (html["name"],email),
                    subject = "歡迎註冊啁啾",
                    body = """嗨，%s :
@@ -33,11 +36,13 @@ class MainPage(webapp2.RequestHandler):
 
 祝您使用愉快
 啁啾""" % (html["first_name"],code))
-
-            self.response.write(json.dumps({"Statu" : "200","Description" : "OK"}))
+              bukkit = EmailComfirm(email = email, token = token , code = code)
+              bukkit.put()
+              self.response.write(json.dumps({"Statu" : "200","Description" : "OK"}))
+            else:
+           	  self.response.write(json.dumps({"Statu" : "405","Description" : "Token not vail"}))
           else:
-           	self.response.write(json.dumps({"Statu" : "405","Description" : "Token not vail"}))
-
+            self.response.write(json.dumps({"Statu" : "406","Description" : "Email registed."}))
 
           
 
@@ -47,3 +52,10 @@ class MainPage(webapp2.RequestHandler):
 app = webapp2.WSGIApplication([
     ('/register', MainPage),
 ], debug=True)
+
+class EmailComfirm(db.Model):
+  email = db.StringProperty()
+  code = db.StringProperty()
+  token = db.StringProperty()
+class Member(db.Model):
+  pass
