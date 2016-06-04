@@ -72,4 +72,4 @@ POST /CreateEvent HTTP:/1.1
 ------------ | ------------- | ------------- | ------------- 
 Statu | 狀態(200成功,401參數不符,402金鑰驗證失敗,500伺服器錯誤) | String | Yes
 Description | 說明 | String | No
-Eventid | 行程ID(如果新增成功的話) | String | Yes
+Eventid | 行程ID(如果新增成功的話) | String | No
