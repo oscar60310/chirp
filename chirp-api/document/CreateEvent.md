@@ -1,0 +1,44 @@
+#CreateEvent
+methos **POST**<br>
+##SEND:
+```HTTP
+POST /CreateEvent HTTP:/1.1
+{
+    "token": "使用者金鑰",
+	"data":
+	{
+		"title": "活動名稱 string",
+		"location": "活動地點 string",
+		"position" :
+		{
+			"lat" : "double",
+			"lng" : "double"
+		},
+		"Time":
+		{
+			"From" : "yyyy/MM/dd hh:mm datetime",
+			"To" : "yyyy/MM/dd hh:mm datetime"
+		},
+		"people_num" : "預計人數 int",
+		"timeline" : 
+		[
+			{
+				"datetime" : "datetime",
+				"event" : "string"
+			}
+		],
+		"brid_limite" : "限制鴿子數 int",
+		"note" : "備註 string"
+	}
+}
+
+
+```
+##RESPOND
+```HTML
+POST /CreateEvent HTTP:/1.1
+{
+    "Statu": "200",
+    "Eventid": "JKD5EDQ9543"
+}
+```
