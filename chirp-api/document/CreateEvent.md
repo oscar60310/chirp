@@ -9,6 +9,7 @@ POST /CreateEvent HTTP:/1.1
 	{
 		"title": "宜蘭監獄三年遊",
 		"location": "宜蘭監獄",
+		"area": "宜蘭",
 		"position" :
 		{
 			"lat" : "23.1212113",
@@ -41,9 +42,10 @@ POST /CreateEvent HTTP:/1.1
 參數 | 說明 | 類別 | 必要
 ------------ | ------------- | ------------- | ------------- 
 token | 使用者金鑰 | String | Yes
-data | 資料內容 | {"title","location","position","time","people_num","timeline","bird_limite","note"} | Yes
+data | 資料內容 | {"title","location","area","position","time","people_num","timeline","bird_limite","note"} | Yes
 title | 活動名稱 | String | Yes
 location | 活動地點 | String | Yes
+area | 活動地區 | String | Yes
 position | 活動地點座標 | {"lat","lng"} | No
 -lat | 活動地點緯度 | Double | No
 -lng | 活動地點經度 | Double | No
@@ -57,7 +59,7 @@ timeline | 行程表 | [{"datetime","event"}] | Yes
 bird_limite | 鴿子數量限制 | Int | Yes
 note | 備註 | String | No
 
-
+活動地區:高雄、宜蘭
 
 
 ##RESPOND
