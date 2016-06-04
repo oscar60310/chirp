@@ -27,6 +27,16 @@ class MainPage(webapp2.RequestHandler):
       if response.status_code == 200:
         html = json.loads(response.content)
         id = html['id'] + ''
+        out = db.GqlQuery('SELECT * FROM Member WHERE id = :1',id).get()
+        if out == None:
+          self.response.write(json.dumps({"Statu" : "403","Description" : "ID not registed."}))
+          return
+        import random 
+        import string
+        access = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(50))
+        out.access_token = access
+        out.put()
+        self.response.write(json.dumps({"Statu" : "200","Description" : "OK.","access_token" : access}))
 
       else:
         self.response.write(json.dumps({"Statu" : "405","Description" : "Token not vail"}))
@@ -37,4 +47,4 @@ app = webapp2.WSGIApplication([
 
 
 class Member(db.Model):
-  pass
+  access_token = db.StringProperty()

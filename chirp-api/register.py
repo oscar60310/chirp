@@ -48,8 +48,14 @@ class MainPage(webapp2.RequestHandler):
 
 祝您使用愉快
 啁啾""" % (html["first_name"],code))
-              bukkit = EmailComfirm(email = email, token = token , code = code)
-              bukkit.put()
+              out = db.GqlQuery('SELECT * FROM EmailComfirm WHERE email = :1',email).get()
+              if out == None:
+                out = EmailComfirm()
+              out.email = email
+              out.token = token
+              out.code = code
+              out.put()
+             
               self.response.write(json.dumps({"Statu" : "200","Description" : "OK"}))
             else:
            	  self.response.write(json.dumps({"Statu" : "405","Description" : "Token not vail"}))
