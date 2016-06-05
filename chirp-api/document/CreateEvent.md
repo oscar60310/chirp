@@ -51,7 +51,7 @@ position | 活動地點座標 | {"lat","lng"} | No
 -lng | 活動地點經度 | Double | No
 time | 活動時間 | {"From","To"} | Yes
 -From | 活動開始時間 | DateTime | Yes
--To | 活動結束時間 | DateTime | No
+-To | 活動結束時間 | DateTime | Yes
 people_num | 預計人數 | Int | Yes
 timeline | 行程表 | [{"datetime","event"}] | Yes
 -datetime | 時間 | DateTime | Yes
@@ -67,7 +67,7 @@ note | 備註 | String | No
 POST /CreateEvent HTTP:/1.1
 {
     "Statu": "200",
-    "Eventid": "JKD5EDQ9543"
+    "Eventid": "660d8985-2a67-11e6-8ee3-591aa432bb7e"
 }
 ```
 參數 | 說明 | 類別 | 必要
