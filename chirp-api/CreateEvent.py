@@ -12,7 +12,6 @@ class MainPage(webapp2.RequestHandler):
       sys.setdefaultencoding('utf8')
       data = self.request.body
       try:
-      if True:
         js = json.loads(data)
         token = js['token']
         out = db.GqlQuery('SELECT * FROM Member WHERE access_token = :1',token).get()
