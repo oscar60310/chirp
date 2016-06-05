@@ -23,7 +23,7 @@ class MainPage(webapp2.RequestHandler):
         dates = datetime.datetime.now()
         idu =  str(uuid.uuid1())
         ev = (Event(create = out.id,id = idu, create_time = dates, data = json.dumps(js['data']), area = js['data']['area'],
-          people_want = int(js['data']['people_num']) , people_now = 1))
+          people_want = int(js['data']['people_num']) , people_now = 1 , title = js['data']['title']))
         ev.put()
         self.response.write(json.dumps({"Statu" : "200","Description" : "OK.","Eventid": idu}))
       except:
@@ -45,3 +45,4 @@ class Event(db.Model):
   area = db.StringProperty()
   people_want = db.IntegerProperty()
   people_now = db.IntegerProperty()
+  title = db.StringProperty()
