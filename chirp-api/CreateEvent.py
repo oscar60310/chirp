@@ -11,7 +11,7 @@ class MainPage(webapp2.RequestHandler):
       reload(sys)
       sys.setdefaultencoding('utf8')
       data = self.request.body
-    #  try:
+      try:
       if True:
         js = json.loads(data)
         token = js['token']
@@ -26,8 +26,8 @@ class MainPage(webapp2.RequestHandler):
           people_want = int(js['data']['people_num']) , people_now = 1))
         ev.put()
         self.response.write(json.dumps({"Statu" : "200","Description" : "OK.","Eventid": idu}))
-   #   except:
-   #     self.response.write(json.dumps({"Statu" : "401","Description" : "JSON load fail."}))
+      except:
+        self.response.write(json.dumps({"Statu" : "401","Description" : "JSON load fail."}))
            
 app = webapp2.WSGIApplication([
     ('/CreateEvent', MainPage),
