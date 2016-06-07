@@ -63,10 +63,26 @@ func main_config_read() -> JSON
         }
       
     }
-    func main_config_write(text: String)
+    func main_config_write(text: JSON)
     {
         let file = "config" //this is the file. we will write to and read from it
    
+        
+        if let dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+            let path = NSURL(fileURLWithPath: dir).URLByAppendingPathComponent(file)
+            
+            //writing
+            do {
+                try text.rawString()!.writeToURL(path, atomically: false, encoding: NSUTF8StringEncoding)
+            }
+            catch { eh.normal("file create error")}
+        }
+
+    }
+    func token_config_write(text: String)
+    {
+        let file = "token" //this is the file. we will write to and read from it
+        
         
         if let dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
             let path = NSURL(fileURLWithPath: dir).URLByAppendingPathComponent(file)
@@ -78,6 +94,31 @@ func main_config_read() -> JSON
             catch { eh.normal("file create error")}
         }
 
+    }
+    func token_config_read() -> String
+    {
+        let file = "token" //this is the file. we will write to and read from it
+        
+        
+        if let dir = NSSearchPathForDirectoriesInDomains(NSSearchPathDirectory.DocumentDirectory, NSSearchPathDomainMask.AllDomainsMask, true).first {
+            let path = NSURL(fileURLWithPath: dir).URLByAppendingPathComponent(file)
+            
+            do
+            {
+                let text = try NSString(contentsOfURL: path, encoding: NSUTF8StringEncoding)
+                return text as String
+            }
+            catch
+            {
+                eh.normal("file read error")
+                return ""
+            }
+        }
+        else
+        {
+            eh.normal("file not exit")
+            return ""
+        }
     }
    
 }

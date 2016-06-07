@@ -52,6 +52,12 @@
                             <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="GFP-gS-z6e">
                                 <rect key="frame" x="20" y="315" width="560" height="265"/>
                                 <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTt-Op-wmk">
+                                        <rect key="frame" x="0.0" y="20" width="560" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBU-GG-la0">
                                         <rect key="frame" x="0.0" y="54" width="560" height="29"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -88,12 +94,6 @@
                                             <action selector="email_send:" destination="WhM-Hq-Clr" eventType="touchUpInside" id="rI7-wp-UDG"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTt-Op-wmk">
-                                        <rect key="frame" x="0.0" y="20" width="560" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="vTt-Op-wmk" firstAttribute="leading" secondItem="GFP-gS-z6e" secondAttribute="leading" id="HEh-hn-edx"/>
@@ -182,6 +182,7 @@
                     </view>
                     <connections>
                         <outlet property="APP_Name" destination="urf-Q6-EPm" id="hjc-me-p8q"/>
+                        <outlet property="button_label" destination="mi1-wU-100" id="Kr0-I4-5j8"/>
                         <outlet property="display_view" destination="GFP-gS-z6e" id="GIU-om-51D"/>
                         <outlet property="email_input" destination="lXH-1v-hPh" id="Yim-mS-PFw"/>
                         <outlet property="email_label1" destination="vTt-Op-wmk" id="ZOc-ka-r5f"/>

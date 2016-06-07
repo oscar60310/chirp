@@ -55,7 +55,7 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
        
         self.token = token
         
-        let parameters = ["fields": "email, first_name, last_name, picture.type(large), id"]
+        let parameters = ["fields": "email, first_name, last_name, picture.type(large), id, name"]
         FBSDKGraphRequest(graphPath: "me",parameters: parameters).startWithCompletionHandler{ (connection, result, error) -> Void in
             
             if error != nil
@@ -64,12 +64,39 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
                 self.eh.normal(error)
                 return
             }
-            let js = JSON(result)
-            self.loginbtn.hidden = true
-            self.display_view.hidden = false
-            self.email_label1.text = "Hi ".localized() +  js["first_name"].string! + "，" + "nice to see you".localized()
-            self.email_label2.text = "we need email confirm".localized()
             
+            // 檢查是不是會員
+            let se = Server()
+            se.Login(token,view: self){ (result_login) -> () in
+                self.busy = false
+                self.button_label.setTitle("submit".localized(), forState:  UIControlState.Normal)
+                self.button_label.enabled = true
+                if result_login == "200"
+                {
+                    let Main: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+                    let vc = Main.instantiateViewControllerWithIdentifier("MainPage") as! ViewController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                    
+                }
+                else if result_login == "403"
+                {
+                    let js = JSON(result)
+                    self.loginbtn.hidden = true
+                    self.display_view.hidden = false
+                    self.email_label1.text = "Hi ".localized() +  js["first_name"].string! + "，" + "nice to see you".localized()
+                    self.email_label2.text = "we need email confirm".localized()
+
+                }
+                else
+                {
+                    self.eh.alert("login errror", text: "network error")
+                }
+                
+            }
+            
+            
+            
+          
             /*
             let loginStorg: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
             let vc = loginStorg.instantiateViewControllerWithIdentifier("MainPage") as! ViewController
@@ -94,27 +121,95 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
         return true
     }
     var busy = false
+    var statu = 1
+    var email = ""
+ 
+    @IBOutlet weak var button_label: UIButton!
     @IBAction func email_send(sender: AnyObject) {
+       
         if self.busy
         {
+         
             return
         }
-        self.busy = true
-        let email: String = email_input.text!
-        let se = Server()
-        se.register_email_request(email, token: self.token){ (boolValue) -> () in
-             self.busy = false
-             if boolValue
-             {
-                self.eh.alert("email ok", text: "email sended")
+        self.button_label.setTitle("busy".localized(), forState:  UIControlState.Normal)
+        self.button_label.enabled = false
+        if statu == 1
+        {
+            self.busy = true
+            let email: String = email_input.text!
+            self.email = email
+            let se = Server()
+            se.register_email_request(email, token: self.token){ (boolValue) -> () in
+                self.busy = false
+                self.button_label.setTitle("submit".localized(), forState:  UIControlState.Normal)
+                self.button_label.enabled = true
+                if boolValue
+                {
+                    self.eh.alert("email ok", text: "email sended")
+                    self.email_label2.text = "please enter code".localized()
+                    self.email_input.placeholder = "code with five char".localized()
+                    self.email_input.text = ""
+                    self.statu = 2
+                
+
+                }
+                else{
+                    self.eh.alert("email fail", text: "email not allow")
+                }
             }
-             else{
-                self.eh.alert("email fail", text: "email not allow")
+        }
+        else if statu == 2
+        {
+            self.busy = true
+            
+            let code: String = email_input.text!
+            let se = Server()
+            se.register_email_comfirm(self.email,code: code,token: self.token){ (boolValue) -> () in
+              
+                if boolValue
+                {
+                    //self.eh.alert("OK", text: "OK")
+                    self.goLogin(self.token)
+
+                }
+                else
+                {
+                    self.busy = false
+                    self.button_label.setTitle("submit".localized(), forState:  UIControlState.Normal)
+                    self.button_label.enabled = true
+
+                    self.eh.alert("code fail", text: "code not currect")
+                }
+                
             }
+            
         }
         
        
         
+    }
+    func goLogin(token: String)
+    {
+        let se = Server()
+        se.Login(token,view: self){ (result) -> () in
+            self.busy = false
+            self.button_label.setTitle("submit".localized(), forState:  UIControlState.Normal)
+            self.button_label.enabled = true
+            if result == "200"
+            {
+                let Main: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+                let vc = Main.instantiateViewControllerWithIdentifier("MainPage") as! ViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+                
+            }
+            else
+            {
+                self.eh.alert("code fail", text: result)
+            }
+            
+        }
+
     }
    
    

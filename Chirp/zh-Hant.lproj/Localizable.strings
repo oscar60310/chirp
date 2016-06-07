@@ -21,3 +21,14 @@
 "email fail" = "電子郵件無法驗證";
 "email ok" = "驗證電子郵件";
 "email sended" = "我們剛剛寄了一封電子郵件給您，裡面包含一組認證碼，趕快去收信囉";
+"please enter code" = "請輸入您在信箱中收到的驗證碼";
+"code with five char" = "五個英文大寫的驗證碼";
+"code fail" = "無法驗證";
+"code not currect" = "我們無法確認這組驗證碼，要不要再試一次看看呢";
+"busy" = "正在發送";
+"submit" = "送出";
+"login errror" = "登入失敗";
+"network error" = "伺服器出了一點小差錯，晚點再試試";
+"All data will be lost." = "您必須由Facebook重新登入";
+"re login title" = "重新登入";
+"re login" = "您的登入似乎過期了，我們得重新登入！";

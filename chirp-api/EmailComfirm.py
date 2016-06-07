@@ -24,11 +24,11 @@ class MainPage(webapp2.RequestHandler):
           p.delete()
         if currect:
           dates = datetime.datetime.now().date()
-          url = 'https://graph.facebook.com/v2.6/me?fields=id&access_token='+token 
+          url = 'https://graph.facebook.com/v2.6/me?fields=id%2Cname%2Cfirst_name&access_token='+token 
           response = urlfetch.fetch(url)
           if response.status_code == 200:
             html = json.loads(response.content)
-            mem = Member(SchoolMail = email, ComfirmDate = dates , FacebookToken = token , id = html['id'])
+            mem = Member(SchoolMail = email, ComfirmDate = dates , FacebookToken = token , member_id = html['id'] , name = html['name'] , first_name = html['first_name'] , chirp_token = "---")
             mem.put()
             self.response.write(json.dumps({"Statu" : "200","Description" : "OK"}))
           else:
@@ -49,4 +49,7 @@ class Member(db.Model):
   SchoolMail = db.StringProperty()
   ComfirmDate = db.DateProperty()
   FacebookToken = db.StringProperty()
-  id = db.StringProperty()
+  member_id = db.StringProperty()
+  name = db.StringProperty()
+  first_name = db.StringProperty()
+  chirp_token = db.StringProperty()

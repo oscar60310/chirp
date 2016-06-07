@@ -4,7 +4,14 @@ import json
 from google.appengine.api import urlfetch
 from google.appengine.ext import db
 import datetime
-
+class Member(db.Model):
+  SchoolMail = db.StringProperty()
+  ComfirmDate = db.DateProperty()
+  FacebookToken = db.StringProperty()
+  member_id = db.StringProperty()
+  name = db.StringProperty()
+  first_name = db.StringProperty()
+  chirp_token = db.StringProperty()
 class MainPage(webapp2.RequestHandler):
     def get(self):
       import sys
@@ -27,16 +34,24 @@ class MainPage(webapp2.RequestHandler):
       if response.status_code == 200:
         html = json.loads(response.content)
         id = html['id'] + ''
-        out = db.GqlQuery('SELECT * FROM Member WHERE id = :1',id).get()
-        if out == None:
+        out = db.GqlQuery('SELECT * FROM Member WHERE member_id = :1',id).run()
+        ok = False
+        #print out
+        for out2 in out:
+          try:
+            ok = True
+            import random 
+            import string
+            access = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(50))
+            mem = Member(SchoolMail = out2.SchoolMail, ComfirmDate = out2.ComfirmDate , FacebookToken = out2.FacebookToken , member_id = out2.member_id, name = out2.name , first_name = out2.first_name , chirp_token = access)
+            mem.put()
+            out2.delete()
+            self.response.write(json.dumps({"Statu" : "200","Description" : "OK.","access_token" : access}))
+          except:
+            pass
+        if ok == False:
           self.response.write(json.dumps({"Statu" : "403","Description" : "ID not registed."}))
           return
-        import random 
-        import string
-        access = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(50))
-        out.access_token = access
-        out.put()
-        self.response.write(json.dumps({"Statu" : "200","Description" : "OK.","access_token" : access}))
 
       else:
         self.response.write(json.dumps({"Statu" : "405","Description" : "Token not vail"}))
@@ -45,6 +60,3 @@ app = webapp2.WSGIApplication([
     ('/Login', MainPage),
 ], debug=True)
 
-
-class Member(db.Model):
-  access_token = db.StringProperty()

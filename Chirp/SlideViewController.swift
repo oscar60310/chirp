@@ -20,13 +20,57 @@ class SlideViewController : UIViewController,UITableViewDelegate,UITableViewData
    
     
     override func viewDidAppear(animated: Bool) {
-        let config = Config(views: self)
-        let js = config.main_config_read() as JSON
+        let cfg = Config(views: self)
      
-        if js != nil
+        if(cfg.token_config_read() == "")
         {
-            hellow.text = "hellow".localized() + "，" + js["first_name"].string!
+            debugPrint("to login page")
+            let loginStorg: UIStoryboard = UIStoryboard(name: "Login",bundle: nil)
+            let vc = loginStorg.instantiateViewControllerWithIdentifier("WelcomePage") as! WelcomeViewController
+            self.presentViewController(vc, animated: true, completion: nil)
         }
+        else
+        {
+            let se = Server()
+            se.get_profile(cfg.token_config_read(), view: self){ (result) -> () in
+             print(result)
+                if result == "200"
+                {
+                    let profile = cfg.main_config_read()
+                
+                  //  print(profile)
+                    let first_name = profile["first_name"]
+                    self.change_hellow(first_name.stringValue)
+                    
+                }
+                else if result == "403"
+                {
+                    
+                    cfg.token_config_write("")
+                    let loginStorg: UIStoryboard = UIStoryboard(name: "Login",bundle: nil)
+                    let vc = loginStorg.instantiateViewControllerWithIdentifier("WelcomePage") as! WelcomeViewController
+                    self.presentViewController(vc, animated: true, completion: nil)
+                    let eh = ErrorHandle(class_name: "viewcontroller",view: vc)
+                    eh.alert("re login title", text: "re login")
+
+                    
+                }
+                else
+                {
+                 
+                    /*
+                     
+                     網路錯誤
+                     */
+                }
+                
+                
+            }
+            
+            
+        }
+        
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -64,12 +108,16 @@ class SlideViewController : UIViewController,UITableViewDelegate,UITableViewData
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if(indexPath.row == 4)
         {
-            let refreshAlert = UIAlertController(title: "Logout", message: "All data will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
+            let refreshAlert = UIAlertController(title: "Logout".localized(), message: "All data will be lost.".localized(), preferredStyle: UIAlertControllerStyle.Alert)
             
             refreshAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { (action: UIAlertAction!) in
                 let config = Config(views: self)
-                config.main_config_write("")
+                config.token_config_write("")
                 self.slideMenuController()?.closeLeft()
+                let loginStorg: UIStoryboard = UIStoryboard(name: "Login",bundle: nil)
+                let vc = loginStorg.instantiateViewControllerWithIdentifier("WelcomePage") as! WelcomeViewController
+                self.presentViewController(vc, animated: true, completion: nil)
+                
             }))
             
             refreshAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { (action: UIAlertAction!) in
@@ -77,9 +125,12 @@ class SlideViewController : UIViewController,UITableViewDelegate,UITableViewData
             }))
             
             presentViewController(refreshAlert, animated: true, completion: nil)
-            
 
         }
+    }
+    func change_hellow(name: String)
+    {
+         hellow.text = "hellow".localized() + "，" + name
     }
       
 }
