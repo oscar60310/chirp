@@ -12,6 +12,11 @@ class Member(db.Model):
   name = db.StringProperty()
   first_name = db.StringProperty()
   chirp_token = db.StringProperty()
+
+class Token(db.Model):
+  member_id = db.StringProperty()
+  token = db.StringProperty()
+
 class MainPage(webapp2.RequestHandler):
     def get(self):
       import sys
@@ -34,24 +39,22 @@ class MainPage(webapp2.RequestHandler):
       if response.status_code == 200:
         html = json.loads(response.content)
         id = html['id'] + ''
-        out = db.GqlQuery('SELECT * FROM Member WHERE member_id = :1',id).run()
-        ok = False
-        #print out
-        for out2 in out:
-          try:
-            ok = True
-            import random 
-            import string
-            access = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(50))
-            mem = Member(SchoolMail = out2.SchoolMail, ComfirmDate = out2.ComfirmDate , FacebookToken = out2.FacebookToken , member_id = out2.member_id, name = out2.name , first_name = out2.first_name , chirp_token = access)
-            mem.put()
-            out2.delete()
-            self.response.write(json.dumps({"Statu" : "200","Description" : "OK.","access_token" : access}))
-          except:
-            pass
-        if ok == False:
+        out = db.GqlQuery('SELECT * FROM Member WHERE member_id = :1',id).get()
+        if out == None:
           self.response.write(json.dumps({"Statu" : "403","Description" : "ID not registed."}))
           return
+        else:
+          import random 
+          import string
+          access = ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(50))
+          tok = db.GqlQuery('SELECT * FROM Token WHERE member_id = :1',id).get()
+          if tok == None:
+            tok = Token(member_id = id , token = access)
+          else:
+            tok.token = access
+          tok.put()
+          self.response.write(json.dumps({"Statu" : "200","Description" : "OK.","access_token" : access}))
+
 
       else:
         self.response.write(json.dumps({"Statu" : "405","Description" : "Token not vail"}))
