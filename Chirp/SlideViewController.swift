@@ -50,8 +50,9 @@ class SlideViewController : UIViewController,UITableViewDelegate,UITableViewData
                     let loginStorg: UIStoryboard = UIStoryboard(name: "Login",bundle: nil)
                     let vc = loginStorg.instantiateViewControllerWithIdentifier("WelcomePage") as! WelcomeViewController
                     self.presentViewController(vc, animated: true, completion: nil)
-                    let eh = ErrorHandle(class_name: "viewcontroller",view: vc)
-                    eh.alert("re login title", text: "re login")
+                    
+                    TSMessage.showNotificationInViewController(vc, title: "re login title".localized(), subtitle: "re login".localized(), type: TSMessageNotificationType.Warning)
+            
 
                     
                 }

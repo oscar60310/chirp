@@ -4,3 +4,5 @@
 
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
+#import "TSMessage.h"
+#import "TSMessageView.h"

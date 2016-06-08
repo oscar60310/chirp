@@ -64,24 +64,8 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="sample@student.nsysu.edu.tw" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lXH-1v-hPh">
-                                        <rect key="frame" x="20" y="93" width="520" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="200" id="9WI-cJ-Yxw"/>
-                                            <constraint firstAttribute="width" constant="200" id="iF2-0E-wZn"/>
-                                            <constraint firstAttribute="height" constant="40" id="weQ-a4-f5g"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="9WI-cJ-Yxw"/>
-                                                <exclude reference="iF2-0E-wZn"/>
-                                            </mask>
-                                        </variation>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mi1-wU-100">
-                                        <rect key="frame" x="230" y="143" width="100" height="41"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mi1-wU-100" customClass="FlatButton" customModule="Material">
+                                        <rect key="frame" x="230" y="153" width="100" height="41"/>
                                         <color key="backgroundColor" red="0.22747882080000001" green="0.71756380890000004" blue="0.47987438399999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="hKk-1P-Dip"/>
@@ -94,6 +78,42 @@
                                             <action selector="email_send:" destination="WhM-Hq-Clr" eventType="touchUpInside" id="rI7-wp-UDG"/>
                                         </connections>
                                     </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="sample@student.nsysu.edu.tw" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="lXH-1v-hPh" customClass="TextField" customModule="Material">
+                                        <rect key="frame" x="20" y="103" width="520" height="40"/>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="9WI-cJ-Yxw"/>
+                                            <constraint firstAttribute="width" constant="200" id="iF2-0E-wZn"/>
+                                            <constraint firstAttribute="height" constant="40" id="weQ-a4-f5g"/>
+                                        </constraints>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="dividerColor">
+                                                <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderActiveColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="dividerActiveColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="detailColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="電子郵件信箱"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9WI-cJ-Yxw"/>
+                                                <exclude reference="iF2-0E-wZn"/>
+                                            </mask>
+                                        </variation>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="vTt-Op-wmk" firstAttribute="leading" secondItem="GFP-gS-z6e" secondAttribute="leading" id="HEh-hn-edx"/>
@@ -103,8 +123,8 @@
                                     <constraint firstItem="mi1-wU-100" firstAttribute="centerX" secondItem="GFP-gS-z6e" secondAttribute="centerX" id="OXu-Pj-8Xr"/>
                                     <constraint firstItem="DBU-GG-la0" firstAttribute="leading" secondItem="GFP-gS-z6e" secondAttribute="leading" id="YxV-sU-NsL"/>
                                     <constraint firstItem="vTt-Op-wmk" firstAttribute="top" secondItem="GFP-gS-z6e" secondAttribute="top" constant="20" id="dhF-BW-xHz"/>
-                                    <constraint firstItem="lXH-1v-hPh" firstAttribute="top" secondItem="DBU-GG-la0" secondAttribute="bottom" constant="10" id="etP-FS-mUm"/>
-                                    <constraint firstItem="mi1-wU-100" firstAttribute="top" secondItem="DBU-GG-la0" secondAttribute="bottom" constant="60" id="twk-IY-AxZ"/>
+                                    <constraint firstItem="lXH-1v-hPh" firstAttribute="top" secondItem="DBU-GG-la0" secondAttribute="bottom" constant="20" id="etP-FS-mUm"/>
+                                    <constraint firstItem="mi1-wU-100" firstAttribute="top" secondItem="DBU-GG-la0" secondAttribute="bottom" constant="70" id="twk-IY-AxZ"/>
                                     <constraint firstItem="lXH-1v-hPh" firstAttribute="centerX" secondItem="GFP-gS-z6e" secondAttribute="centerX" id="xrj-go-Wx0"/>
                                     <constraint firstItem="DBU-GG-la0" firstAttribute="top" secondItem="vTt-Op-wmk" secondAttribute="bottom" constant="5" id="y1Z-9z-CnI"/>
                                 </constraints>

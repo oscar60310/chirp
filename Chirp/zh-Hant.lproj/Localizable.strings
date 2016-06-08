@@ -32,3 +32,4 @@
 "All data will be lost." = "您必須由Facebook重新登入";
 "re login title" = "重新登入";
 "re login" = "您的登入似乎過期了，我們得重新登入！";
+"event name" = "行程名稱";

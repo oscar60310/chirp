@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F5845DB881E8D54AAB180DF /* libPods-Chirp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5778007608011AEA299F07 /* libPods-Chirp.a */; };
+		FC0C8CC21D08383500A77C55 /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0C8CBB1D08382100A77C55 /* Material.framework */; };
+		FC0C8CC31D08383500A77C55 /* Material.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC0C8CBB1D08382100A77C55 /* Material.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC192E9B1CFA169D00CF7315 /* air.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC192E9A1CFA169D00CF7315 /* air.jpg */; };
 		FC192E9D1CFA1AF100CF7315 /* autumn.png in Resources */ = {isa = PBXBuildFile; fileRef = FC192E9C1CFA1AF100CF7315 /* autumn.png */; };
 		FC69BA0B1CFF32E8007B3EBE /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69BA0A1CFF32E8007B3EBE /* Server.swift */; };
@@ -42,6 +45,41 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FC0C8CBA1D08382100A77C55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC0C8CAD1D08382100A77C55 /* Material.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 963832361B88DFD80015F710;
+			remoteInfo = "Material iOS";
+		};
+		FC0C8CBC1D08382100A77C55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC0C8CAD1D08382100A77C55 /* Material.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 966016131CB2ED6C00AAB661;
+			remoteInfo = "Material OSX";
+		};
+		FC0C8CBE1D08382100A77C55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC0C8CAD1D08382100A77C55 /* Material.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 963832411B88DFD80015F710;
+			remoteInfo = "Material iOS Tests";
+		};
+		FC0C8CC01D08382100A77C55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC0C8CAD1D08382100A77C55 /* Material.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9660161C1CB2ED6C00AAB661;
+			remoteInfo = "Material OSX Tests";
+		};
+		FC0C8CC41D08383500A77C55 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FC0C8CAD1D08382100A77C55 /* Material.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 963832351B88DFD80015F710;
+			remoteInfo = "Material iOS";
+		};
 		FC69BA161CFF46F6007B3EBE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FC69BA0C1CFF46F6007B3EBE /* Alamofire.xcodeproj */;
@@ -122,12 +160,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				FC69BA281CFF480C007B3EBE /* Alamofire.framework in CopyFiles */,
+				FC0C8CC31D08383500A77C55 /* Material.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		18DF748953818780ED51E751 /* Pods-Chirp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chirp.release.xcconfig"; path = "Pods/Target Support Files/Pods-Chirp/Pods-Chirp.release.xcconfig"; sourceTree = "<group>"; };
+		7E5778007608011AEA299F07 /* libPods-Chirp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chirp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E07F89A8E4AE7D16C38E47D3 /* Pods-Chirp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chirp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chirp/Pods-Chirp.debug.xcconfig"; sourceTree = "<group>"; };
+		FC0C8CAD1D08382100A77C55 /* Material.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Material.xcodeproj; path = "Material-master/Material.xcodeproj"; sourceTree = "<group>"; };
 		FC192E9A1CFA169D00CF7315 /* air.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = air.jpg; sourceTree = "<group>"; };
 		FC192E9C1CFA1AF100CF7315 /* autumn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autumn.png; sourceTree = "<group>"; };
 		FC69BA0A1CFF32E8007B3EBE /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
@@ -175,8 +218,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC69BA271CFF47D6007B3EBE /* Alamofire.framework in Frameworks */,
+				FC0C8CC21D08383500A77C55 /* Material.framework in Frameworks */,
 				FC7E88101CFC6DB0005DB2FE /* FBSDKLoginKit.framework in Frameworks */,
 				FC7E880F1CFC6DB0005DB2FE /* FBSDKCoreKit.framework in Frameworks */,
+				4F5845DB881E8D54AAB180DF /* libPods-Chirp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +242,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C46A07ABA089FD23D04C1AD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E07F89A8E4AE7D16C38E47D3 /* Pods-Chirp.debug.xcconfig */,
+				18DF748953818780ED51E751 /* Pods-Chirp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CC7C4F0986F6765C9D0D8A1B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7E5778007608011AEA299F07 /* libPods-Chirp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FC0C8CAE1D08382100A77C55 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FC0C8CBB1D08382100A77C55 /* Material.framework */,
+				FC0C8CBD1D08382100A77C55 /* Material.framework */,
+				FC0C8CBF1D08382100A77C55 /* Material.xctest */,
+				FC0C8CC11D08382100A77C55 /* Material OSX Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		FC69BA0D1CFF46F6007B3EBE /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,11 +296,14 @@
 		FCA180DB1CF99B6A0087E9F1 = {
 			isa = PBXGroup;
 			children = (
+				FC0C8CAD1D08382100A77C55 /* Material.xcodeproj */,
 				FC69BA0C1CFF46F6007B3EBE /* Alamofire.xcodeproj */,
 				FCA180E61CF99B6A0087E9F1 /* Chirp */,
 				FCA180FB1CF99B6A0087E9F1 /* ChirpTests */,
 				FCA181061CF99B6A0087E9F1 /* ChirpUITests */,
 				FCA180E51CF99B6A0087E9F1 /* Products */,
+				C46A07ABA089FD23D04C1AD0 /* Pods */,
+				CC7C4F0986F6765C9D0D8A1B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -342,15 +418,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCA1810C1CF99B6A0087E9F1 /* Build configuration list for PBXNativeTarget "Chirp" */;
 			buildPhases = (
+				C022468FFD4F9BDF0509F355 /* [CP] Check Pods Manifest.lock */,
 				FCA180E01CF99B6A0087E9F1 /* Sources */,
 				FCA180E11CF99B6A0087E9F1 /* Frameworks */,
 				FCA180E21CF99B6A0087E9F1 /* Resources */,
 				FC69BA261CFF475C007B3EBE /* CopyFiles */,
+				8597B167B7E8C756DDAE0B69 /* [CP] Embed Pods Frameworks */,
+				A92E3375BE051E6535C53463 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				FC69BA251CFF4749007B3EBE /* PBXTargetDependency */,
+				FC0C8CC51D08383500A77C55 /* PBXTargetDependency */,
 			);
 			name = Chirp;
 			productName = Chirp;
@@ -433,6 +513,10 @@
 					ProductGroup = FC69BA0D1CFF46F6007B3EBE /* Products */;
 					ProjectRef = FC69BA0C1CFF46F6007B3EBE /* Alamofire.xcodeproj */;
 				},
+				{
+					ProductGroup = FC0C8CAE1D08382100A77C55 /* Products */;
+					ProjectRef = FC0C8CAD1D08382100A77C55 /* Material.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -444,6 +528,34 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		FC0C8CBB1D08382100A77C55 /* Material.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Material.framework;
+			remoteRef = FC0C8CBA1D08382100A77C55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC0C8CBD1D08382100A77C55 /* Material.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Material.framework;
+			remoteRef = FC0C8CBC1D08382100A77C55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC0C8CBF1D08382100A77C55 /* Material.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = Material.xctest;
+			remoteRef = FC0C8CBE1D08382100A77C55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FC0C8CC11D08382100A77C55 /* Material OSX Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Material OSX Tests.xctest";
+			remoteRef = FC0C8CC01D08382100A77C55 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		FC69BA171CFF46F6007B3EBE /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -532,6 +644,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8597B167B7E8C756DDAE0B69 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chirp/Pods-Chirp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A92E3375BE051E6535C53463 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Chirp/Pods-Chirp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C022468FFD4F9BDF0509F355 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FCA180E01CF99B6A0087E9F1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -572,6 +732,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FC0C8CC51D08383500A77C55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Material iOS";
+			targetProxy = FC0C8CC41D08383500A77C55 /* PBXContainerItemProxy */;
+		};
 		FC69BA251CFF4749007B3EBE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "Alamofire iOS";
@@ -687,11 +852,13 @@
 		};
 		FCA1810D1CF99B6A0087E9F1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E07F89A8E4AE7D16C38E47D3 /* Pods-Chirp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Chirp",
@@ -704,16 +871,19 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Chirp/Chirp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}  /**";
 			};
 			name = Debug;
 		};
 		FCA1810E1CF99B6A0087E9F1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18DF748953818780ED51E751 /* Pods-Chirp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Chirp",
@@ -725,6 +895,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Chirp/Chirp-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}  /**";
 			};
 			name = Release;
 		};

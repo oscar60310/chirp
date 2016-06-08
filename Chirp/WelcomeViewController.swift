@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Material
+
+
 class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
 {
     //FB SDK
@@ -23,7 +26,7 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
     @IBOutlet weak var email_label1: UILabel!
     @IBOutlet weak var email_label2: UILabel!
     @IBOutlet weak var display_view: UIView!
-    @IBOutlet weak var email_input: UITextField!
+    @IBOutlet weak var email_input: TextField!
     var token = ""
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +34,10 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
         APP_Name.text = "Chirp".localized()
         slogan.text = "Login page slogan".localized()
         display_view.hidden = true
+        
+        email_input.textColor = MaterialColor.white
+        email_input.textAlignment = NSTextAlignment.Center
+        email_input.font = UIFont.systemFontOfSize(20.0)
         
         eh = ErrorHandle(class_name: "WelcomeViewController",view: self)
         config = Config(views: self)
@@ -146,7 +153,8 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
                 self.button_label.enabled = true
                 if boolValue
                 {
-                    self.eh.alert("email ok", text: "email sended")
+               
+                    TSMessage.showNotificationInViewController(self, title: "email ok".localized(), subtitle: "email sended".localized(), type: TSMessageNotificationType.Success)
                     self.email_label2.text = "please enter code".localized()
                     self.email_input.placeholder = "code with five char".localized()
                     self.email_input.text = ""
@@ -155,7 +163,9 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
 
                 }
                 else{
-                    self.eh.alert("email fail", text: "email not allow")
+                    
+                    TSMessage.showNotificationInViewController(self, title: "email fail".localized(), subtitle: "email not allow".localized(), type: TSMessageNotificationType.Error)
+       
                 }
             }
         }
@@ -178,8 +188,9 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
                     self.busy = false
                     self.button_label.setTitle("submit".localized(), forState:  UIControlState.Normal)
                     self.button_label.enabled = true
+                    TSMessage.showNotificationInViewController(self, title: "code fail".localized(), subtitle: "code not currect".localized(), type: TSMessageNotificationType.Error)
 
-                    self.eh.alert("code fail", text: "code not currect")
+             	
                 }
                 
             }
@@ -206,6 +217,7 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
             else
             {
                 self.eh.alert("code fail", text: result)
+                
             }
             
         }
