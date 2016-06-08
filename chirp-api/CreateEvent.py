@@ -11,22 +11,23 @@ class MainPage(webapp2.RequestHandler):
       reload(sys)
       sys.setdefaultencoding('utf8')
       data = self.request.body
-      try:
+      if True:
         js = json.loads(data)
         token = js['token']
-        out = db.GqlQuery('SELECT * FROM Member WHERE access_token = :1',token).get()
+        print(token)
+        out = db.GqlQuery('SELECT * FROM Token WHERE token = :1',token).get() 
         if out == None:
           self.response.write(json.dumps({"Statu" : "402","Description" : "Token not vail."}))
           return 
         import uuid
         dates = datetime.datetime.now()
         idu =  str(uuid.uuid1())
-        ev = (Event(create = out.id,id = idu, create_time = dates, data = json.dumps(js['data']), area = js['data']['area'],
+        ev = (Event(create = out.member_id,id = idu, create_time = dates, data = json.dumps(js['data']), area = js['data']['area'],
           people_want = int(js['data']['people_num']) , people_now = 1 , title = js['data']['title']))
         ev.put()
         self.response.write(json.dumps({"Statu" : "200","Description" : "OK.","Eventid": idu}))
-      except:
-        self.response.write(json.dumps({"Statu" : "401","Description" : "JSON load fail."}))
+      #except:
+      #  self.response.write(json.dumps({"Statu" : "401","Description" : "JSON load fail."}))
            
 app = webapp2.WSGIApplication([
     ('/CreateEvent', MainPage),
@@ -45,3 +46,7 @@ class Event(db.Model):
   people_want = db.IntegerProperty()
   people_now = db.IntegerProperty()
   title = db.StringProperty()
+class Token(db.Model):
+  member_id = db.StringProperty()
+  pass
+  

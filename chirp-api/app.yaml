@@ -11,6 +11,8 @@ handlers:
 - url: /Login
   script: Login.app
 - url: /CreateEvent
-  script: CreateEvent.
+  script: CreateEvent.app
 - url: /GetProfile
   script: GetProfile.app
+- url: /EventList
+  script: EventList.app
