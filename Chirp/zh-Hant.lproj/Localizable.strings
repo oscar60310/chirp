@@ -33,3 +33,11 @@
 "re login title" = "重新登入";
 "re login" = "您的登入似乎過期了，我們得重新登入！";
 "event name" = "行程名稱";
+"event location" = "行程地點";
+"welcome back" = "歡迎回來";
+"grade to see you again" = "很高興再次見到您";
+"now you can design the " = "現在，你可以開始安排 ";
+" days activity" = "天的細部流程了";
+"very well" = "太棒了";
+"time set error" = "日期設定錯誤";
+"your time set is error" = "您設定的時間好像不太對...";

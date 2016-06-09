@@ -84,6 +84,10 @@ class WelcomeViewController: UIViewController , FBSDKLoginButtonDelegate
                     let vc = Main.instantiateViewControllerWithIdentifier("MainPage") as! ViewController
                     self.presentViewController(vc, animated: true, completion: nil)
                     
+                    let js = JSON(result)
+                    
+                    TSMessage.showNotificationInViewController(vc, title: "welcome back".localized(), subtitle: "HI " + js["first_name"].string! + "grade to see you again".localized(), type: TSMessageNotificationType.Success)
+                    
                 }
                 else if result_login == "403"
                 {

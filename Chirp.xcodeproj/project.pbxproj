@@ -10,6 +10,9 @@
 		4F5845DB881E8D54AAB180DF /* libPods-Chirp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E5778007608011AEA299F07 /* libPods-Chirp.a */; };
 		FC0C8CC21D08383500A77C55 /* Material.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC0C8CBB1D08382100A77C55 /* Material.framework */; };
 		FC0C8CC31D08383500A77C55 /* Material.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC0C8CBB1D08382100A77C55 /* Material.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC0C8CE61D08822D00A77C55 /* calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = FC0C8CE51D08822D00A77C55 /* calendar.png */; };
+		FC0C8D021D08AB0B00A77C55 /* DatePickerDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0C8D011D08AB0B00A77C55 /* DatePickerDialog.swift */; };
+		FC0C8D0D1D08B55800A77C55 /* TimeLineCreate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0C8D0C1D08B55800A77C55 /* TimeLineCreate.swift */; };
 		FC192E9B1CFA169D00CF7315 /* air.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC192E9A1CFA169D00CF7315 /* air.jpg */; };
 		FC192E9D1CFA1AF100CF7315 /* autumn.png in Resources */ = {isa = PBXBuildFile; fileRef = FC192E9C1CFA1AF100CF7315 /* autumn.png */; };
 		FC69BA0B1CFF32E8007B3EBE /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC69BA0A1CFF32E8007B3EBE /* Server.swift */; };
@@ -171,6 +174,9 @@
 		7E5778007608011AEA299F07 /* libPods-Chirp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Chirp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E07F89A8E4AE7D16C38E47D3 /* Pods-Chirp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chirp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Chirp/Pods-Chirp.debug.xcconfig"; sourceTree = "<group>"; };
 		FC0C8CAD1D08382100A77C55 /* Material.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Material.xcodeproj; path = "Material-master/Material.xcodeproj"; sourceTree = "<group>"; };
+		FC0C8CE51D08822D00A77C55 /* calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar.png; sourceTree = "<group>"; };
+		FC0C8D011D08AB0B00A77C55 /* DatePickerDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerDialog.swift; sourceTree = "<group>"; };
+		FC0C8D0C1D08B55800A77C55 /* TimeLineCreate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineCreate.swift; sourceTree = "<group>"; };
 		FC192E9A1CFA169D00CF7315 /* air.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = air.jpg; sourceTree = "<group>"; };
 		FC192E9C1CFA1AF100CF7315 /* autumn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = autumn.png; sourceTree = "<group>"; };
 		FC69BA0A1CFF32E8007B3EBE /* Server.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
@@ -368,6 +374,7 @@
 			children = (
 				FC7E88181CFC9397005DB2FE /* SwiftyJSON.swift */,
 				FCA181341CF9DB160087E9F1 /* Localizable.strings */,
+				FC0C8D011D08AB0B00A77C55 /* DatePickerDialog.swift */,
 			);
 			name = Resource;
 			sourceTree = "<group>";
@@ -380,6 +387,7 @@
 				FCA181251CF9D25A0087E9F1 /* CreateViewController.swift */,
 				FCA181381CF9E65A0087E9F1 /* SlideViewController.swift */,
 				FC7BE8581CFC527600034F5C /* WelcomeViewController.swift */,
+				FC0C8D0C1D08B55800A77C55 /* TimeLineCreate.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -387,6 +395,7 @@
 		FCA1813A1CFA0B440087E9F1 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				FC0C8CE51D08822D00A77C55 /* calendar.png */,
 				FCE764D51CFC11A2002F362D /* chat.png */,
 				FC7BE8531CFC4D1300034F5C /* icon80.png */,
 				FC7BE85C1CFC61D600034F5C /* login_back2.jpg */,
@@ -486,6 +495,11 @@
 					FCA180E31CF99B6A0087E9F1 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = KVU655BPT6;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 					FCA180F71CF99B6A0087E9F1 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -619,6 +633,7 @@
 				FCA1812A1CF9D5130087E9F1 /* Main.storyboard in Resources */,
 				FCE764D21CFC103F002F362D /* add.png in Resources */,
 				FC192E9D1CFA1AF100CF7315 /* autumn.png in Resources */,
+				FC0C8CE61D08822D00A77C55 /* calendar.png in Resources */,
 				FCA181321CF9DB160087E9F1 /* Localizable.strings in Resources */,
 				FCA180EF1CF99B6A0087E9F1 /* Assets.xcassets in Resources */,
 				FC7BE8571CFC510B00034F5C /* Login.storyboard in Resources */,
@@ -700,8 +715,10 @@
 				FC7BE8591CFC527600034F5C /* WelcomeViewController.swift in Sources */,
 				FCA180EA1CF99B6A0087E9F1 /* ViewController.swift in Sources */,
 				FCA181191CF9AD510087E9F1 /* SlideMenuController.swift in Sources */,
+				FC0C8D0D1D08B55800A77C55 /* TimeLineCreate.swift in Sources */,
 				FC7E88191CFC9397005DB2FE /* SwiftyJSON.swift in Sources */,
 				FCA181391CF9E65A0087E9F1 /* SlideViewController.swift in Sources */,
+				FC0C8D021D08AB0B00A77C55 /* DatePickerDialog.swift in Sources */,
 				FC7E88171CFC8FE1005DB2FE /* Config.swift in Sources */,
 				FCCA10E01CFB200F004F42E1 /* SlideOptionTable.swift in Sources */,
 				FCCA10DC1CFB1AB1004F42E1 /* SlideOption.swift in Sources */,

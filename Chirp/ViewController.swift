@@ -26,7 +26,7 @@ class ViewController: SlideMenuController{
             self.leftViewController = leftController
         }
         //load right silde
-        /*if let rightController = self.storyboard?.instantiateViewControllerWithIdentifier("right")
+       /* if let rightController = self.storyboard?.instantiateViewControllerWithIdentifier("calendar")
         {
             self.rightViewController = rightController
         }*/

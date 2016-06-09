@@ -1,15 +1,18 @@
 PODS:
+  - ActionSheetPicker-3.0 (2.1.0)
   - HexColors (2.2.1)
   - TSMessages (0.9.12):
     - HexColors (~> 2.2.0)
 
 DEPENDENCIES:
+  - ActionSheetPicker-3.0
   - TSMessages
 
 SPEC CHECKSUMS:
+  ActionSheetPicker-3.0: db66605feb85689279d328206c61f0e4f398df92
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
   TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
 
-PODFILE CHECKSUM: c912c2b581778403b350c40771559716ad2edd73
+PODFILE CHECKSUM: 7d1396223a5fa3ab4ddde82dd826e83be97088f3
 
 COCOAPODS: 1.0.1
