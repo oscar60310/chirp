@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import GoogleMaps
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         FBSDKApplicationDelegate.sharedInstance().application(application ,didFinishLaunchingWithOptions: launchOptions)
+        //設定google map api金鑰
+        GMSServices.provideAPIKey("AIzaSyC9SNT_R0UfaWu1N__PvplHTCCFjVeFHok")
         
         return true
     }

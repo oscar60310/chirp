@@ -170,5 +170,15 @@ class Server
         
         
     }
+    func getlocation(addr: String,completion: (result: JSON)->())
+    {
+        let key = "AIzaSyC4qa4PIIHu4-HoV_LKnwLxzFKwyhp4iyI"
+        Alamofire.request(.GET, "https://maps.googleapis.com/maps/api/geocode/json", parameters: ["address": addr , "key" : key,"region": "tw"])
+            .responseJSON { response in
+                completion(result: JSON(response.result.value!))
+        }
+        
+
+    }
 
 }

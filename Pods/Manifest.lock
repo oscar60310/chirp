@@ -1,18 +1,21 @@
 PODS:
   - ActionSheetPicker-3.0 (2.1.0)
+  - GoogleMaps (1.13.2)
   - HexColors (2.2.1)
   - TSMessages (0.9.12):
     - HexColors (~> 2.2.0)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
+  - GoogleMaps
   - TSMessages
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: db66605feb85689279d328206c61f0e4f398df92
+  GoogleMaps: b20a103ff307f58392e603cf142e59d7e30374c1
   HexColors: abfd172e329dab59888614ccba6f216cec59289d
   TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
 
-PODFILE CHECKSUM: 7d1396223a5fa3ab4ddde82dd826e83be97088f3
+PODFILE CHECKSUM: aa92fa33f8afaae8ab747f2aa88970e28d4fb2fc
 
 COCOAPODS: 1.0.1

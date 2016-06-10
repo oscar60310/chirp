@@ -1,7 +1,7 @@
 import UIKit
 import Material
-
-class CreateViewController : UIViewController,UITableViewDelegate,UITableViewDataSource{
+import GoogleMaps
+class CreateViewController : UIViewController{
     
      // 上方標題
     
@@ -14,21 +14,35 @@ class CreateViewController : UIViewController,UITableViewDelegate,UITableViewDat
     @IBOutlet weak var label_event_name: UILabel!
     @IBOutlet weak var event_name_input: TextField!
     @IBOutlet weak var NavBar: UINavigationBar!
+    
+    
+    @IBOutlet weak var map_view: GMSMapView!
+    
     @IBAction func openSlide(sender: AnyObject) {
         self.slideMenuController()?.openLeft()
     }
-    override func viewDidLoad() {
+    
+    
+    
+    
+      override func viewDidLoad() {
         Localize.setCurrentLanguage("zh-Hant")
         //NavBar.topItem?.title = "create event".localized()
-   
-        super.viewDidLoad()
-        tabletime.delegate = self
-        tabletime.dataSource = self
-        /// TEMP DEBUG Change language to chinese
+             /// TEMP DEBUG Change language to chinese
         //print(Localize.availableLanguages())
  
         ///
-      
+        super.viewDidLoad()
+        print("google map load")
+ 
+     
+        map_view.myLocationEnabled = true
+        
+        let camera = GMSCameraPosition.cameraWithLatitude(22.626618,
+                                                          longitude: 120.265746, zoom: 6)
+        map_view.camera = camera
+        
+        
         
     }
     @IBAction func check_name(sender: TextField) {
@@ -38,6 +52,8 @@ class CreateViewController : UIViewController,UITableViewDelegate,UITableViewDat
     
     @IBOutlet weak var note_input: TextField!
     override func viewDidAppear(animated: Bool) {
+
+
         super.viewDidAppear(true)
         event_name_input.font = RobotoFont.mediumWithSize(20)
         label_event_name.text = "event name".localized()
@@ -49,7 +65,7 @@ class CreateViewController : UIViewController,UITableViewDelegate,UITableViewDat
         note_input.font = RobotoFont.mediumWithSize(20)
         note_input.textAlignment = NSTextAlignment.Center
         
-        
+         
        
      
     }
@@ -109,7 +125,7 @@ class CreateViewController : UIViewController,UITableViewDelegate,UITableViewDat
                 else if date_for.stringFromDate(self.end_date) == date_for.stringFromDate(self.start_date)
                 {
                     self.date_play.append(date)
-                    self.label_set_date.setTitle(" " + date_for.stringFromDate(self.start_date), forState: UIControlState.Normal)
+                    self.label_set_date.setTitle(" " + date_for.stringFromDate(self.start_date) + " (1日)", forState: UIControlState.Normal)
                 }
                 else
                 {
@@ -124,11 +140,11 @@ class CreateViewController : UIViewController,UITableViewDelegate,UITableViewDat
                     
                     self.date_play.append(self.end_date)
                     
-                    self.label_set_date.setTitle(" " + date_for.stringFromDate(self.start_date) + " → " + date_for.stringFromDate(self.end_date), forState: UIControlState.Normal)
+                    self.label_set_date.setTitle(" " + date_for.stringFromDate(self.start_date) + " → " + date_for.stringFromDate(self.end_date)+" (\(self.date_play.count)日)", forState: UIControlState.Normal)
 
                 }
-                
-                TSMessage.showNotificationInViewController(self, title: "very well".localized(), subtitle: "now you can design the ".localized() + String(self.date_play.count) + " days activity".localized(), type: TSMessageNotificationType.Success)
+                self.label_set_date.backgroundColor = UIColor(netHex:0x91F2CF)
+           //     TSMessage.showNotificationInViewController(self, title: "very well".localized(), subtitle: "now you can design the ".localized() + String(self.date_play.count) + " days activity".localized(), type: TSMessageNotificationType.Success)
             
              
                 
@@ -140,120 +156,68 @@ class CreateViewController : UIViewController,UITableViewDelegate,UITableViewDat
         
     }
     
-    // Return Options count
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-     
-        return timeline.count
-    }
-    
-    
-    @IBOutlet weak var tabletime: UITableView!
-    // return cell
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
-    {
-       
-        let cell = self.tabletime.dequeueReusableCellWithIdentifier("timeline") as! TimeLineCreate
-       // print(timeline[indexPath.row])
-        cell.detail.text = timeline[indexPath.row]["description"].stringValue
-        let date_for = NSDateFormatter()
-        date_for.dateFormat = "yyyy/MM/dd HH:mm"
-        let start = date_for.dateFromString( timeline[indexPath.row]["start_time"].stringValue)
-        let end = date_for.dateFromString( timeline[indexPath.row]["end_time"].stringValue)
-        date_for.dateFormat = "HH:mm"
-        cell.start_time.text = date_for.stringFromDate(start!)
-        cell.end_time.text = date_for.stringFromDate(end!)
-        date_for.dateFormat = "M/d"
-        cell.date_show.text = date_for.stringFromDate(start!)
-  
-        return cell
-
-    }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
-    
-    
-    @IBOutlet weak var viewArea: UIView!
-    @IBOutlet weak var start_time_label: UIButton!
-    
-    @IBOutlet weak var end_time_lable: UIButton!
-    
-    var detail_start_time = NSDate()
-    var detail_end_time = NSDate()
-    @IBAction func set_start_time(sender: UIButton) {
-       let ac =  ActionSheetDatePicker(title: "設定時間", datePickerMode: UIDatePickerMode.DateAndTime, selectedDate: self.detail_start_time, doneBlock: {
-            picker, value, index in
-            self.detail_start_time = value as! NSDate
-            let date_for = NSDateFormatter()
-            date_for.dateFormat = "HHmm"
-            self.start_time_label.setTitle(date_for.stringFromDate(self.detail_start_time), forState: UIControlState
-        .Normal)
-        
-
-        
-        
-            return
-            }, cancelBlock: {
-                ActionStringCancelBlock in return
-            }, origin: self.viewArea)
-        ac.showActionSheetPicker()
-    
-        
-        
-    }
-    @IBAction func set_end_time(sender: AnyObject) {
-        let ac =  ActionSheetDatePicker(title: "設定時間", datePickerMode: UIDatePickerMode.DateAndTime, selectedDate: self.detail_end_time, doneBlock: {
-            picker, value, index in
-            self.detail_end_time = value as! NSDate
-            let date_for = NSDateFormatter()
-            date_for.dateFormat = "HHmm"
-            self.end_time_lable.setTitle(date_for.stringFromDate(self.detail_end_time), forState: UIControlState
-                .Normal)
-            
-            
-            
-            
-            return
-            }, cancelBlock: {
-                ActionStringCancelBlock in return
-            }, origin: self.viewArea)
-        ac.showActionSheetPicker()
-        
-
-    }
-    
-    @IBOutlet weak var detail_input: TextField!
-    var timeline = [JSON]()
-    @IBAction func add_detail(sender: UIButton) {
-        if detail_input.text != ""
+    var start_lng = 0.0
+    var start_lat = 0.0
+    @IBAction func addr_finish(sender: UITextField) {
+        let addr = sender.text
+        if addr != ""
         {
-            let data = time_line_det(detail_start_time, end_time: detail_end_time, description: detail_input.text!)
-            timeline.append(data)
-            
-            tabletime.beginUpdates()
-            tabletime.insertRowsAtIndexPaths([
-                NSIndexPath(forRow: timeline.count-1, inSection: 0)
-                ], withRowAnimation: .Automatic)
-            
-            tabletime.endUpdates()
-            
-            
-            detail_input.text = ""
-            detail_start_time = detail_end_time
-            
-            //print(JSON(timeline).rawString())
+            let se = Server()
+            se.getlocation(addr!){(result) -> () in
+                if result["status"].stringValue == "OK"
+                {
+                    let data:JSON = result["results"]
+                   // print(data.count)
+                    var choose_addr = [String]()
+                    for i in 0 ..< data.count
+                    {
+                        
+                        choose_addr.append(data[i]["formatted_address"].stringValue)
+                    }
+                    ActionSheetStringPicker.showPickerWithTitle("選擇一個最接近的地址", rows: choose_addr, initialSelection: 0, doneBlock:
+                        {
+                            picker,index,selectvalue in
+                           // print(index)
+                            let coord = data[index]["geometry"]["location"]
+                            self.start_lat = coord["lat"].doubleValue
+                            self.start_lng = coord["lng"].doubleValue
+                            sender.text = choose_addr[index]
+                            
+                            let  position = CLLocationCoordinate2DMake( self.start_lat, self.start_lng)
+                            let marker = GMSMarker(position: position)
+                            marker.title = "集合點"
+                            marker.map = self.map_view
+                            let camera = GMSCameraPosition.cameraWithLatitude( self.start_lat,
+                                longitude: self.start_lng, zoom: 15)
+                            self.map_view.camera = camera
+                            
+                            return
+                        }, cancelBlock: { (canc) in
+                            return
+                        }, origin: self.map_view as UIView)
+                }
+                else
+                {
+                    // google map encoding error
+                }
+            }
         }
         
     }
-    func time_line_det(start_time: NSDate,end_time:NSDate,description:String) -> JSON
-    {
-       // let dataFromString = jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-     
-        let date_for = NSDateFormatter()
-        date_for.dateFormat = "yyyy/MM/dd HH:mm"
-        let json = JSON(["start_time":date_for.stringFromDate(start_time),"end_time":date_for.stringFromDate(end_time),"description":description])
-       // print(json.rawString())
-        return json
+ 
+
+}
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        assert(red >= 0 && red <= 255, "Invalid red component")
+        assert(green >= 0 && green <= 255, "Invalid green component")
+        assert(blue >= 0 && blue <= 255, "Invalid blue component")
+        
+        self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+    }
+    
+    convenience init(netHex:Int) {
+        self.init(red:(netHex >> 16) & 0xff, green:(netHex >> 8) & 0xff, blue:netHex & 0xff)
     }
 }
 
