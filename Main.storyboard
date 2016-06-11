@@ -211,6 +211,9 @@
                                                 <exclude reference="PiY-CZ-Jox"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <action selector="set_area:" destination="sTl-ao-0iD" eventType="touchUpInside" id="fxy-79-FtA"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -372,6 +375,7 @@
                     <size key="freeformSize" width="600" height="1200"/>
                     <connections>
                         <outlet property="NavBar" destination="5px-Gf-n5e" id="1nO-Cj-5Dg"/>
+                        <outlet property="addr_input_text" destination="WDZ-90-bZ3" id="AEU-eX-pw8"/>
                         <outlet property="event_name_input" destination="L9U-cn-TcK" id="tbB-t4-ak3"/>
                         <outlet property="label_event_name" destination="qzz-re-ZcH" id="uUU-wh-3vj"/>
                         <outlet property="label_location" destination="RnR-dy-ts9" id="yqZ-IG-Dw1"/>

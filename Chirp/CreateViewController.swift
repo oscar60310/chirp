@@ -1,7 +1,12 @@
 import UIKit
 import Material
 import GoogleMaps
-class CreateViewController : UIViewController{
+class CreateViewController : UIViewController, GMSMapViewDelegate{
+    
+     // 可選擇的地區
+    
+    
+    
     
      // 上方標題
     
@@ -41,7 +46,7 @@ class CreateViewController : UIViewController{
         let camera = GMSCameraPosition.cameraWithLatitude(22.626618,
                                                           longitude: 120.265746, zoom: 6)
         map_view.camera = camera
-        
+        map_view.delegate = self
         
         
     }
@@ -187,10 +192,12 @@ class CreateViewController : UIViewController{
                             let marker = GMSMarker(position: position)
                             marker.title = "集合點"
                             marker.map = self.map_view
+                            marker.draggable = true
+                            
                             let camera = GMSCameraPosition.cameraWithLatitude( self.start_lat,
                                 longitude: self.start_lng, zoom: 15)
                             self.map_view.camera = camera
-                            
+                              TSMessage.showNotificationInViewController(self, title: "Map marker".localized(), subtitle: "we put a marker on map, you can drop it if neessscery".localized(), type: TSMessageNotificationType.Success)
                             return
                         }, cancelBlock: { (canc) in
                             return
@@ -204,7 +211,14 @@ class CreateViewController : UIViewController{
         }
         
     }
- 
+    @IBOutlet weak var addr_input_text: TextField!
+    func mapView(mapView: GMSMapView, didEndDraggingMarker marker: GMSMarker) {
+        self.start_lat = marker.position.latitude
+        self.start_lng = marker.position.longitude
+        addr_input_text.text = addr_input_text.text! + "附近"
+    }
+    @IBAction func set_area(sender: FlatButton) {
+    }
 
 }
 extension UIColor {

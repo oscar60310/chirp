@@ -41,3 +41,5 @@
 "very well" = "太棒了";
 "time set error" = "日期設定錯誤";
 "your time set is error" = "您設定的時間好像不太對...";
+"Map marker" = "地圖標誌";
+"we put a marker on map, you can drop it if neessscery" = "我們在地圖上放置了一個標誌，您可以拖動她來改變集合地點";
