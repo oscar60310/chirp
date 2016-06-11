@@ -255,6 +255,9 @@
                                                         <exclude reference="PYt-Tb-E5c"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="set_want_people:" destination="sTl-ao-0iD" eventType="touchUpInside" id="hxp-qL-iBY"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -293,6 +296,9 @@
                                                         <exclude reference="8uy-Yk-Lnp"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="set_bird_limite:" destination="sTl-ao-0iD" eventType="touchUpInside" id="Luv-04-zkb"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>

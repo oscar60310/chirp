@@ -4,8 +4,9 @@ import GoogleMaps
 class CreateViewController : UIViewController, GMSMapViewDelegate{
     
      // 可選擇的地區
-    
-    
+    let area_choose = ["高雄","宜蘭"]
+    let people_num_choose = [5,10,15,20,30,50]
+    let bird_limite_choose = ["無限制","0","1","2","3"]
     
     
      // 上方標題
@@ -163,6 +164,7 @@ class CreateViewController : UIViewController, GMSMapViewDelegate{
     
     var start_lng = 0.0
     var start_lat = 0.0
+    var area = "" , people_want = 0, bird_limit = ""
     @IBAction func addr_finish(sender: UITextField) {
         let addr = sender.text
         if addr != ""
@@ -218,8 +220,51 @@ class CreateViewController : UIViewController, GMSMapViewDelegate{
         addr_input_text.text = addr_input_text.text! + "附近"
     }
     @IBAction func set_area(sender: FlatButton) {
+        ActionSheetStringPicker.showPickerWithTitle("choose area".localized(), rows: self.area_choose, initialSelection: 0, doneBlock:
+            {
+                picker,index,selectvalue in
+                // print(index)
+                self.area = self.area_choose[index]
+                sender.setTitle(self.area, forState: UIControlState.Normal)
+                
+                sender.backgroundColor = UIColor(netHex:0x91F2CF)
+                return
+            }, cancelBlock: { (canc) in
+                return
+            }, origin: sender.superview! as UIView)
+        
     }
 
+    @IBAction func set_want_people(sender: FlatButton) {
+        ActionSheetStringPicker.showPickerWithTitle("choose people num".localized(), rows: self.people_num_choose, initialSelection: 0, doneBlock:
+            {
+                picker,index,selectvalue in
+                // print(index)
+                self.people_want = self.people_num_choose[index]
+                sender.setTitle(String(self.people_want), forState: UIControlState.Normal)
+                
+                sender.backgroundColor = UIColor(netHex:0x91F2CF)
+                return
+            }, cancelBlock: { (canc) in
+                return
+            }, origin: sender.superview! as UIView)
+        
+        
+    }
+    @IBAction func set_bird_limite(sender: FlatButton) {
+        ActionSheetStringPicker.showPickerWithTitle("choose bird limite".localized(), rows: self.bird_limite_choose, initialSelection: 0, doneBlock:
+            {
+                picker,index,selectvalue in
+                // print(index)
+                self.bird_limit = self.bird_limite_choose[index]
+                sender.setTitle(self.bird_limit, forState: UIControlState.Normal)
+                
+                sender.backgroundColor = UIColor(netHex:0x91F2CF)
+                return
+            }, cancelBlock: { (canc) in
+                return
+            }, origin: sender.superview! as UIView)
+    }
 }
 extension UIColor {
     convenience init(red: Int, green: Int, blue: Int) {

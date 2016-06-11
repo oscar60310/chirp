@@ -43,3 +43,7 @@
 "your time set is error" = "您設定的時間好像不太對...";
 "Map marker" = "地圖標誌";
 "we put a marker on map, you can drop it if neessscery" = "我們在地圖上放置了一個標誌，您可以拖動她來改變集合地點";
+"choose area" = "選擇區域";
+"choose people num" = "選擇預計人數";
+"choose bird limite" = "選擇限制鴿子數";
+
