@@ -16,3 +16,8 @@ class SlideOptionTable: UITableViewCell  {
    
    
 }
+class SlideOptionTags: UITableViewCell
+{
+    
+    @IBOutlet weak var tag_name: UILabel!
+}

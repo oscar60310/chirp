@@ -19,6 +19,7 @@ class ViewController: SlideMenuController{
         if let mainController = self.storyboard?.instantiateViewControllerWithIdentifier("create")
         {
             self.mainViewController = mainController
+            
         }
         // load left silde
         if let leftController = self.storyboard?.instantiateViewControllerWithIdentifier("left")

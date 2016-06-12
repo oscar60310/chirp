@@ -218,6 +218,7 @@ class CreateViewController : UIViewController, GMSMapViewDelegate{
         self.start_lat = marker.position.latitude
         self.start_lng = marker.position.longitude
         addr_input_text.text = addr_input_text.text! + "附近"
+        print(self.start_lat,self.start_lng)
     }
     @IBAction func set_area(sender: FlatButton) {
         ActionSheetStringPicker.showPickerWithTitle("choose area".localized(), rows: self.area_choose, initialSelection: 0, doneBlock:
@@ -264,6 +265,24 @@ class CreateViewController : UIViewController, GMSMapViewDelegate{
             }, cancelBlock: { (canc) in
                 return
             }, origin: sender.superview! as UIView)
+    }
+    
+    @IBAction func next_step(sender: UIButton) {
+        let loginStorg: UIStoryboard = UIStoryboard(name: "Main",bundle: nil)
+        let vc = loginStorg.instantiateViewControllerWithIdentifier("create2") as! Create2Controller
+     //   vc.modalTransitionStyle = .CoverVertical
+      //  self.presentViewController(vc, animated: true, completion: nil)
+        
+        self.slideMenuController()?.changeMainViewController(vc,close: true)
+
+        TSMessage.showNotificationInViewController(vc, title: "next step".localized(), subtitle: "we need more detail about your event".localized(), type: TSMessageNotificationType.Success)
+
+    }
+    enum UIModalTransitionStyle : Int {
+        case CoverVertical = 0
+        case FlipHorizontal
+        case CrossDissolve
+        case PartialCurl
     }
 }
 extension UIColor {

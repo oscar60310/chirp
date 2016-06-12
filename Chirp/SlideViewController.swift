@@ -11,15 +11,24 @@ class SlideViewController : UIViewController,UITableViewDelegate,UITableViewData
         super.viewDidLoad()
         
         // 左方選單內容
-        self.s_option = [SlideOption(name: "create event".localized() , icon:"add.png"),SlideOption(name: "event list".localized() , icon:"note.png"),SlideOption(name: "chat room".localized() , icon:"chat.png"),SlideOption(name: "high light event".localized() , icon:"badge.png"), SlideOption(name: "Logout".localized() , icon:"badge.png")]
+        self.s_option = [SlideOption(name:"home".localized(),icon:"home.png"),
+                         SlideOption(name:"event".localized(),icon: "-"),
+                         SlideOption(name: "create event".localized() , icon:"add.png"),
+                         SlideOption(name: "event list".localized() , icon:"note.png"),
+                         SlideOption(name: "chat room".localized() , icon:"chat.png"),
+                         SlideOption(name: "high light event".localized() , icon:"badge.png"),
+                         SlideOption(name:"abuot".localized(),icon: "-") ,
+                         SlideOption(name: "profile".localized() , icon:"about-us.png"),
+                         SlideOption(name: "about app".localized() , icon:"about-app.png"),
+                         SlideOption(name: "content us".localized() , icon:"phone-receiver.png"),
+                         SlideOption(name: "setting".localized() , icon:"-"),
+                         SlideOption(name: "Logout".localized() , icon:"sign-out-option.png")]
         
        
         
 
     }
-   
-    
-    override func viewDidAppear(animated: Bool) {
+      override func viewDidAppear(animated: Bool) {
         let cfg = Config(views: self)
      
         if(cfg.token_config_read() == "")
@@ -95,19 +104,27 @@ class SlideViewController : UIViewController,UITableViewDelegate,UITableViewData
     
     // return cell
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    
-        let cell = self.OptionTable.dequeueReusableCellWithIdentifier("Cell_option") as! SlideOptionTable?
-        
-        
         var option : SlideOption
         option = s_option[indexPath.row]
+        if (option.icon == "-")
+        {
+            let cell = self.OptionTable.dequeueReusableCellWithIdentifier("tags") as! SlideOptionTags?
+           
+
+            cell!.tag_name.text = option.name
+            return cell!
+        }
+        else
+        {
+            let cell = self.OptionTable.dequeueReusableCellWithIdentifier("Cell_option") as! SlideOptionTable?
         
-        cell!.name_label.text = option.name
-        cell!.icon.image = UIImage(named: option.icon)
-        return cell!
+            cell!.name_label.text = option.name
+            cell!.icon.image = UIImage(named: option.icon)
+            return cell!
+        }
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if(indexPath.row == 4)
+        if(indexPath.row == 11)
         {
             let refreshAlert = UIAlertController(title: "Logout".localized(), message: "All data will be lost.".localized(), preferredStyle: UIAlertControllerStyle.Alert)
             
@@ -127,6 +144,30 @@ class SlideViewController : UIViewController,UITableViewDelegate,UITableViewData
             
             presentViewController(refreshAlert, animated: true, completion: nil)
 
+        }
+        else if indexPath.row == 2
+        {
+             let create_con = self.storyboard?.instantiateViewControllerWithIdentifier("create")
+             self.slideMenuController()?.changeMainViewController(create_con!,close: true)
+        }
+        else if indexPath.row == 3
+        {
+            
+            let storyboard = UIStoryboard(name: "Event", bundle: nil)
+            let create_con = storyboard.instantiateViewControllerWithIdentifier("eventdetail")
+            self.slideMenuController()?.changeMainViewController(create_con,close: true)
+        }
+    }
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        var option : SlideOption
+        option = s_option[indexPath.row]
+        if (option.icon == "-")
+        {
+            return 30
+        }
+        else
+        {
+           return 50
         }
     }
     func change_hellow(name: String)
