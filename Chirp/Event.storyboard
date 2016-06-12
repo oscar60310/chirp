@@ -91,6 +91,14 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kFr-zN-bzi" customClass="TimeLineViewControl">
                                 <rect key="frame" x="40" y="288" width="688" height="357"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag.png" translatesAutoresizingMaskIntoConstraints="NO" id="3dt-V1-1ZX">
+                                        <rect key="frame" x="207" y="305" width="32" height="32"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="flag.png" translatesAutoresizingMaskIntoConstraints="NO" id="3nE-4w-Pva">
+                                        <rect key="frame" x="401" y="-4" width="32" height="32"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="pkT-7L-YXh">
@@ -418,6 +426,7 @@
     <resources>
         <image name="bars.png" width="64" height="64"/>
         <image name="bird.png" width="32" height="32"/>
+        <image name="flag.png" width="24" height="24"/>
         <image name="garbage.jpg" width="219" height="218"/>
         <image name="like.png" width="32" height="32"/>
         <image name="stanley.jpg" width="208" height="208"/>

@@ -19,7 +19,7 @@ const float LINE_WIDTH = 2.0;
 const float CIRCLE_RADIUS = 3.0;
 const float INITIAL_PROGRESS_CONTAINER_WIDTH = 20.0;
 const float PROGRESS_VIEW_CONTAINER_LEFT = 51.0;
-const float VIEW_WIDTH = 225.0;
+const float VIEW_WIDTH = 225.0; //225
 
 @interface TimeLineViewControl () {
     BOOL didStopAnimation;
@@ -156,7 +156,7 @@ const float VIEW_WIDTH = 225.0;
         [label setFont:[UIFont fontWithName:@"HelveticaNeue" size:16.0]];
         [self.progressDescriptionViewContainer addSubview:label];
         [label makeConstraints:^(MASConstraintMaker *make) {
-            make.left.equalTo(_progressDescriptionViewContainer).with.offset(70	);
+            make.left.equalTo(_progressDescriptionViewContainer).with.offset(7);
             make.width.equalTo(leftWidth);
             make.top.equalTo(lastLabel.bottom).with.offset(betweenLabelOffset);
             make.height.greaterThanOrEqualTo(@(16));
